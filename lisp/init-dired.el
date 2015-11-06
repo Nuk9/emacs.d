@@ -6,6 +6,17 @@
 
 (require-package 'dired+)
 (require 'dired+)
+
+(defun dired-new-file (file)
+  "Create a new FILE in dired mode."
+  (interactive
+   (list (read-file-name "Create file: " (dired-current-directory))))
+  (write-region "" nil (expand-file-name file) t)
+  (dired-add-file file)
+  (revert-buffer)
+  (dired-goto-file (expand-file-name file))
+  )
+
 (eval-after-load 'dired+
   '(progn
      ;; prevent global keysettings being overwritten
@@ -16,6 +27,8 @@
      (define-key dired-mode-map (kbd "s-o") 'dired-omit-mode)
      (define-key dired-mode-map (kbd "{") 'ergoemacs-open-in-external-app)
      (define-key dired-mode-map (kbd "}") 'ergoemacs-open-in-desktop)
+     (define-key dired-mode-map (kbd "<f2>") 'dired-rename-file)
+     (define-key dired-mode-map (kbd "c") 'dired-new-file)
      (define-key dired-mode-map (kbd "<backspace>")
        (lookup-key dired-mode-map (kbd "^")))
      ;; (setq-default dired-omit-files-p t)
@@ -37,7 +50,7 @@
           (t (list (buffer-file-name))))))
     (setq doIt (if (<= (length myFileList) 5)
                    t
-                 (y-or-n-p "Open more than 5 files?")))
+                 (y-or-n-p? "Open more than 5 files?")))
     (when doIt
       (cond
        ((string-equal system-type "windows-nt")

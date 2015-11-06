@@ -16,6 +16,7 @@
 (require 'init-window)
 (require 'init-edit)
 
+(require 'init-recentf)
 (require 'init-helm)
 (require 'init-dired)
 (require 'init-org)
