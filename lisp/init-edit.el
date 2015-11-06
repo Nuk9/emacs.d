@@ -13,6 +13,9 @@
 (setq-default cursor-type 'bar)
 (blink-cursor-mode 0)
 
+(menu-bar-mode -1)
+(defalias 'yes-or-no-p 'y-or-n-p)
+
 (setq-default backup-inhibited t)
 (setq-default auto-save-default nil)
 
@@ -21,10 +24,22 @@
 (global-set-key (kbd "<f2>") 'rename-this-file-and-buffer)
 (global-set-key (kbd "<f3>") 'save-buffer)
 (global-set-key (kbd "C-x C-m") 'execute-extended-command)
+;; Rebind M-w because default binding(kill-ring-save) has visual feedback which is not useful
+(global-set-key (kbd "M-w") 'copy-region-as-kill)
+(global-set-key (kbd "M-k") 'mark-word)
+(global-set-key (kbd "C-:") 'comment-dwim)
+
+(defun kill-whole-line-or-region ()
+  "Kill region if active only, otherwise kill current line."
+  (interactive)
+  (if (region-active-p)
+      (call-interactively 'kill-region)
+    (call-interactively 'kill-whole-line)))
+(global-set-key (kbd "C-w") 'kill-whole-line-or-region)
 
 (defun xah-delete-current-file ()
   "Delete the file associated with the current buffer and close the buffer.
-Also push file content to `kill-ring'.
+
 If buffer is not file, just close it, and push file content to `kill-ring'.
 
 URL `http://ergoemacs.org/emacs/elisp_delete-current-file.html'

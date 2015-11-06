@@ -1,1 +1,2 @@
-Emacs config
+# Emacs config by Nuk
+

@@ -29,6 +29,17 @@ re-downloaded in order to locate PACKAGE."
   (require-package package)
   (require package))
 
+(setq package-enable-at-startup nil)
+(package-initialize)
+
+;;; Endless upgrade
+(defun endless/upgrade ()
+  "Upgrade all packages, no questions asked."
+  (interactive)
+  (save-window-excursion
+    (list-packages)
+    (package-menu-mark-upgrades)
+    (package-menu-execute 'no-query)))
 
 (provide 'init-elpa)
 
