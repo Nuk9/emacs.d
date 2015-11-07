@@ -8,6 +8,11 @@
 (setq-default flycheck-emacs-lisp-load-path 'inherit)
 (setq-default flycheck-emacs-lisp-initialize-packages 'auto)
 
+;;;
+(require-package-load 'rainbow-delimiters)
+(rainbow-delimiters-mode t)
+(show-paren-mode 1)
+
 ;;; add Elisp backends to company-mode
 (add-hook 'emacs-lisp-mode-hook
 	  (lambda ()

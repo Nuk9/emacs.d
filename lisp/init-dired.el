@@ -4,8 +4,7 @@
 
 ;;; Code:
 
-(require-package 'dired+)
-(require 'dired+)
+(require-package-load 'dired+)
 
 (defun dired-new-file (file)
   "Create a new FILE in dired mode."
@@ -14,8 +13,7 @@
   (write-region "" nil (expand-file-name file) t)
   (dired-add-file file)
   (revert-buffer)
-  (dired-goto-file (expand-file-name file))
-  )
+  (dired-goto-file (expand-file-name file)))
 
 (eval-after-load 'dired+
   '(progn
@@ -28,7 +26,7 @@
      (define-key dired-mode-map (kbd "{") 'ergoemacs-open-in-external-app)
      (define-key dired-mode-map (kbd "}") 'ergoemacs-open-in-desktop)
      (define-key dired-mode-map (kbd "<f2>") 'dired-rename-file)
-     (define-key dired-mode-map (kbd "c") 'dired-new-file)
+     ;; (define-key dired-mode-map (kbd "c") 'dired-new-file)
      (define-key dired-mode-map (kbd "<backspace>")
        (lookup-key dired-mode-map (kbd "^")))
      ;; (setq-default dired-omit-files-p t)
@@ -71,6 +69,7 @@
    ((string-equal system-type "darwin") (shell-command "open ."))
    ((string-equal system-type "gnu/linux")
     (let ((process-connection-type nil)) (start-process "" nil "xdg-open" ".")))))
+
 
 (setf dired-isearch-filenames t)     ; Dired mode search filename only
 (setq dired-dwim-target t)
