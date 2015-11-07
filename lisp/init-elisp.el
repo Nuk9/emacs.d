@@ -19,6 +19,9 @@
 	    (set (make-local-variable 'company-backends)
 		 (add-to-list 'company-backends 'company-elisp))))
 
+;;; in elisp, '' is not a pair
+(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+
 (provide 'init-elisp)
 
 ;;; init-elisp.el ends here

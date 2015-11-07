@@ -15,11 +15,12 @@
 (require 'init-buffer)
 (require 'init-window)
 (require 'init-edit)
+(require 'init-dired)
 
+(require 'init-sp)
 (require 'init-wg)
 (require 'init-recentf)
 (require 'init-helm)
-(require 'init-dired)
 (require 'init-org)
 (require 'init-yas)
 (require 'init-ido)

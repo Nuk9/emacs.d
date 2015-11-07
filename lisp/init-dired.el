@@ -18,6 +18,7 @@
 (eval-after-load 'dired+
   '(progn
      ;; prevent global keysettings being overwritten
+     (defvar dired-mode-map)
      (define-key dired-mode-map (kbd "M-o") nil)
      (define-key dired-mode-map (kbd "M-i") nil)
      (define-key dired-mode-map (kbd "M-u") nil)
@@ -26,16 +27,20 @@
      (define-key dired-mode-map (kbd "{") 'ergoemacs-open-in-external-app)
      (define-key dired-mode-map (kbd "}") 'ergoemacs-open-in-desktop)
      (define-key dired-mode-map (kbd "<f2>") 'dired-rename-file)
-     ;; (define-key dired-mode-map (kbd "c") 'dired-new-file)
+     (define-key dired-mode-map (kbd "c") 'dired-new-file)
      (define-key dired-mode-map (kbd "<backspace>")
        (lookup-key dired-mode-map (kbd "^")))
-     ;; (setq-default dired-omit-files-p t)
-     (setq dired-omit-files
-           (concat dired-omit-files "\\|^\\..+$"))))
+     (setq-default dired-omit-files-p t)
+     (defvar dired-omit-files)
+     (setq-default dired-omit-files
+           (concat dired-omit-files "\\|^\\..+$"))
+     ))
 
 ;; disable dired omit message
 (setq-default dired-omit-verbose nil)
 (setq-default dired-omit-files-p t)
+(setq-default diredp-hide-details-initially-flag nil)
+(setq-default diredp-hide-details-propagate-flag nil)
 
 ;; dired-open-in-external-app functions
 (defun ergoemacs-open-in-external-app ()
@@ -71,10 +76,10 @@
     (let ((process-connection-type nil)) (start-process "" nil "xdg-open" ".")))))
 
 
-(setf dired-isearch-filenames t)     ; Dired mode search filename only
-(setq dired-dwim-target t)
-(setq dired-recursive-copies (quote always))
-(setq dired-recursive-deletes (quote top))
+(setq-default dired-isearch-filenames t)     ; Dired mode search filename only
+(setq-default dired-dwim-target t)
+(setq-default dired-recursive-copies (quote always))
+(setq-default dired-recursive-deletes (quote top))
 (put 'dired-find-alternate-file 'disabled nil)
 
 (provide 'init-dired)
