@@ -4,6 +4,10 @@
 
 ;;; Code:
 
+;;; Add folder to flycheck
+(setq-default flycheck-emacs-lisp-load-path 'inherit)
+(setq-default flycheck-emacs-lisp-initialize-packages 'auto)
+
 ;;; add Elisp backends to company-mode
 (add-hook 'emacs-lisp-mode-hook
 	  (lambda ()

@@ -16,6 +16,7 @@
 (require 'init-window)
 (require 'init-edit)
 
+(require 'init-wg)
 (require 'init-recentf)
 (require 'init-helm)
 (require 'init-dired)
@@ -24,7 +25,6 @@
 (require 'init-ido)
 (require 'init-company)
 (require 'init-flycheck)
-(require 'init-wg)
 (require 'init-magit)
 
 ;; Support for programming languages
