@@ -21,7 +21,7 @@
 
 ;;; in elisp, '' is not a pair
 (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
-
+(setq-default ad-redefinition-action 'accept)
 (provide 'init-elisp)
 
 ;;; init-elisp.el ends here

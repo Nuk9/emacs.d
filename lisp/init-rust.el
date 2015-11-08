@@ -5,6 +5,10 @@
 ;;; Code:
 (require-package-load 'rust-mode)
 
+(require-package-load 'exec-path-from-shell)
+(exec-path-from-shell-initialize)
+(exec-path-from-shell-copy-env "RUST_SRC_PATH")
+
 ;; company
 (require-package-load 'racer)
 (require-package-load 'company-racer)

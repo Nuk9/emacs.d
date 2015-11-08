@@ -12,7 +12,7 @@
 
 (setq-default cursor-type 'bar)
 (blink-cursor-mode 0)
-
+(delete-selection-mode 1)
 (menu-bar-mode -1)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
@@ -37,20 +37,6 @@
     (call-interactively 'kill-whole-line)))
 (global-set-key (kbd "C-w") 'kill-whole-line-or-region)
 
-(defun xah-delete-current-file ()
-  "Delete the file associated with the current buffer and close the buffer.
-
-If buffer is not file, just close it, and push file content to `kill-ring'.
-
-URL `http://ergoemacs.org/emacs/elisp_delete-current-file.html'
-Version 2015-08-10"
-  (interactive)
-  (progn
-    (kill-new (buffer-string))
-    (when (buffer-file-name)
-      (progn (delete-file (buffer-file-name))
-             (message "Deleted: 「%s」." (buffer-file-name))))
-    (kill-buffer (current-buffer))))
 
 (provide 'init-edit)
 

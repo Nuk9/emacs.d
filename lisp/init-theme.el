@@ -18,7 +18,7 @@
   (if (display-graphic-p)
       (set-fontset-font (frame-parameter nil 'font)
                         charset
-                        (font-spec :family "Noto Sans S Chinese" :size 12))))
+                        (font-spec :family "Microsoft YaHei" :size 12))))
 
 (provide 'init-theme)
 

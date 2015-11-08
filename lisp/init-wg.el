@@ -5,9 +5,11 @@
 ;;; Code:
 
 (require-package-load 'workgroups2)
+(setq-default wg-prefix-key (kbd "C-c z"))
 (setq-default wg-session-file "~/sync/session/.emacs_workgroups")
-(setq-default wg-prefix-key (kbd "C-c"))
 (workgroups-mode 1)
+
+(require-package-load 'helm-projectile)
 
 (provide 'init-wg)
 

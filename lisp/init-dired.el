@@ -5,6 +5,19 @@
 ;;; Code:
 
 (require-package-load 'dired+)
+(require-package-load 'dired-sort)
+
+(let ((gls (executable-find "gls")))
+  (when gls (setq-default insert-directory-program gls)))
+(setq-default dired-omit-verbose nil)
+(setq-default dired-omit-files-p t)
+(setq-default diredp-hide-details-initially-flag nil)
+(setq-default diredp-hide-details-propagate-flag nil)
+(setq-default dired-isearch-filenames t)     ; Dired mode search filename only
+(setq-default dired-dwim-target t)
+(setq-default dired-recursive-copies (quote always))
+(setq-default dired-recursive-deletes (quote top))
+(put 'dired-find-alternate-file 'disabled nil)
 
 (defun dired-new-file (file)
   "Create a new FILE in dired mode."
@@ -23,6 +36,7 @@
      (define-key dired-mode-map (kbd "M-i") nil)
      (define-key dired-mode-map (kbd "M-u") nil)
      (define-key dired-mode-map (kbd "C-t") nil)
+     (define-key dired-mode-map (kbd "<f2>") 'diredp-rename-this-file)
      (define-key dired-mode-map (kbd "s-o") 'dired-omit-mode)
      (define-key dired-mode-map (kbd "{") 'ergoemacs-open-in-external-app)
      (define-key dired-mode-map (kbd "}") 'ergoemacs-open-in-desktop)
@@ -35,12 +49,6 @@
      (setq-default dired-omit-files
            (concat dired-omit-files "\\|^\\..+$"))
      ))
-
-;; disable dired omit message
-(setq-default dired-omit-verbose nil)
-(setq-default dired-omit-files-p t)
-(setq-default diredp-hide-details-initially-flag nil)
-(setq-default diredp-hide-details-propagate-flag nil)
 
 ;; dired-open-in-external-app functions
 (defun ergoemacs-open-in-external-app ()
@@ -76,12 +84,5 @@
     (let ((process-connection-type nil)) (start-process "" nil "xdg-open" ".")))))
 
 
-(setq-default dired-isearch-filenames t)     ; Dired mode search filename only
-(setq-default dired-dwim-target t)
-(setq-default dired-recursive-copies (quote always))
-(setq-default dired-recursive-deletes (quote top))
-(put 'dired-find-alternate-file 'disabled nil)
-
 (provide 'init-dired)
-
 ;;; init-dired.el ends here

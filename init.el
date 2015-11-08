@@ -18,7 +18,6 @@
 (require 'init-dired)
 
 (require 'init-sp)
-(require 'init-wg)
 (require 'init-recentf)
 (require 'init-helm)
 (require 'init-org)
@@ -27,6 +26,10 @@
 (require 'init-company)
 (require 'init-flycheck)
 (require 'init-magit)
+
+;; project management
+(require 'init-projectile)
+(require 'init-perspective)
 
 ;; Support for programming languages
 (require 'init-prog)
