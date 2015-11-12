@@ -13,7 +13,7 @@
 (setq-default projectile-completion-system 'grizzl)
 
 (helm-projectile-on)
-(global-set-key (kbd "C-c C-f") 'projectile-find-file)
+(global-set-key (kbd "C-c f") 'projectile-find-file)
 
 (provide 'init-projectile)
 
