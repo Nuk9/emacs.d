@@ -7,10 +7,10 @@
 (require-package-load 'helm)
 (require-package-load 'helm-package)
 
-(global-set-key (kbd "C-x C-m") 'helm-M-x)
-(global-set-key (kbd "C-x C-f") 'helm-find-files)
-(global-set-key (kbd "C-x f") 'helm-for-files)
-(global-set-key (kbd "C-x b") 'helm-buffers-list)
+;; (global-set-key (kbd "C-x C-m") 'helm-M-x)
+;; (global-set-key (kbd "C-x C-f") 'helm-find-files)
+;; (global-set-key (kbd "C-x f") 'helm-for-files)
+;; (global-set-key (kbd "C-x b") 'helm-buffers-list)
 (global-set-key (kbd "C-c i") 'helm-imenu)
 (global-set-key (kbd "C-x i") 'package-install)
 

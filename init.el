@@ -23,7 +23,6 @@
 (require 'init-swiper)
 (require 'init-org)
 (require 'init-yas)
-(require 'init-ido)
 (require 'init-company)
 (require 'init-flycheck)
 (require 'init-magit)
