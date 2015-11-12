@@ -11,6 +11,8 @@
               '((up . nil) (down . nil) (t . left)))
 
 (setq-default cursor-type 'bar)
+(setq-default column-number-mode t)
+
 (blink-cursor-mode 0)
 (delete-selection-mode 1)
 (menu-bar-mode -1)
@@ -36,7 +38,6 @@
       (call-interactively 'kill-region)
     (call-interactively 'kill-whole-line)))
 (global-set-key (kbd "C-w") 'kill-whole-line-or-region)
-
 
 (provide 'init-edit)
 

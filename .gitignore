@@ -8,3 +8,4 @@ history
 *.eld
 games/
 flycheck_init.el
+tramp

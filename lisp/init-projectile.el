@@ -4,6 +4,13 @@
 
 ;;; Code:
 
+
+;;; Some useful shortcuts
+;;; C-c p D open dired of project root
+;;; C-c p v open magit-status of this project
+;;; C-c p b open project buffers
+;;; C-c p k kill all project buffers
+
 (require-package-load 'projectile)
 (projectile-global-mode)
 (setq-default projectile-indexing-method 'alien)
