@@ -9,8 +9,7 @@
 (setq-default projectile-indexing-method 'alien)
 (setq-default projectile-switch-project-action 'projectile-dired)
 
-(require-package-load 'grizzl)
-(setq-default projectile-completion-system 'grizzl)
+(setq-default projectile-completion-system 'ivy)
 
 (helm-projectile-on)
 (global-set-key (kbd "C-c f") 'projectile-find-file)

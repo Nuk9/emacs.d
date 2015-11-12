@@ -41,6 +41,8 @@ re-downloaded in order to locate PACKAGE."
     (package-menu-mark-upgrades)
     (package-menu-execute 'no-query)))
 
+(global-set-key (kbd "C-x i") 'package-install)
+
 (provide 'init-elpa)
 
 ;;; init-elpa.el ends here
