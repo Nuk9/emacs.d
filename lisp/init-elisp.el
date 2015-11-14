@@ -20,7 +20,7 @@
 		 (add-to-list 'company-backends 'company-elisp))))
 
 ;;; in elisp, '' is not a pair
-(sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
+;;; (sp-local-pair 'emacs-lisp-mode "'" nil :actions nil)
 (setq-default ad-redefinition-action 'accept)
 (provide 'init-elisp)
 
