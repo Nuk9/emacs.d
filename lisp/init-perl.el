@@ -4,7 +4,8 @@
 
 ;;; Code:
 
+(defalias 'perl-mode 'cperl-mode)
 
-(provide 'init-prog)
+(provide 'init-perl)
 
-;;; init-prog.el ends here
+;;; init-perl.el ends here

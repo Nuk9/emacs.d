@@ -17,7 +17,7 @@
 (require 'init-edit)
 (require 'init-dired)
 
-(require 'init-sp)
+;; (require 'init-sp)
 (require 'init-recentf)
 (require 'init-helm)
 (require 'init-swiper)
@@ -34,6 +34,7 @@
 ;; Support for programming languages
 (require 'init-prog)
 (require 'init-elisp)
+(require 'init-perl)
 (require 'init-rust)
 
 (require 'init-mac)
