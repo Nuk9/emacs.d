@@ -18,7 +18,14 @@
   (if (display-graphic-p)
       (set-fontset-font (frame-parameter nil 'font)
                         charset
-                        (font-spec :family "Microsoft YaHei" :size 12))))
+                        (font-spec :family "Noto Sans CJK SC" :size 13))))
+
+;; Test display of CJK fonts
+;; いろはにほへとちにぬるを
+;; 花朵艳丽终将散落，谁人世间能长久好
+;; にこにこに
+;; 貴方のハートにニコニコに
+;; 微风送客软语伴茶
 
 (provide 'init-theme)
 
