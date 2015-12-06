@@ -3,7 +3,7 @@
 
 ;;; Code:
 
-;;; (require-package 'yasnippet)
+(require-package 'yasnippet)
 (setq yas-snippet-dirs nil)
 (setq yas-snippet-dirs '("~/.emacs.d/snippets"))
 

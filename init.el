@@ -19,7 +19,7 @@
 
 ;; (require 'init-sp)
 (require 'init-recentf)
-(require 'init-helm)
+;; (require 'init-helm)
 (require 'init-swiper)
 (require 'init-org)
 (require 'init-yas)
