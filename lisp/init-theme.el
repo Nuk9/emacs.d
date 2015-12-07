@@ -18,7 +18,7 @@
   (if (display-graphic-p)
       (set-fontset-font (frame-parameter nil 'font)
                         charset
-                        (font-spec :family "Noto Sans CJK SC" :size 13))))
+                        (font-spec :family "Noto Sans CJK SC Regular" :size 13))))
 
 ;; Test display of CJK fonts
 ;; いろはにほへとちにぬるを
