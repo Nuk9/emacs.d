@@ -18,7 +18,7 @@
 
 (setq-default projectile-completion-system 'ivy)
 
-(helm-projectile-on)
+;;; (helm-projectile-on)
 (global-set-key (kbd "C-c f") 'projectile-find-file)
 
 (provide 'init-projectile)
