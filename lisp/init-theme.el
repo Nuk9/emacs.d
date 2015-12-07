@@ -10,9 +10,11 @@
 (menu-bar-mode nil)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-
-(if (display-graphic-p)
-    (set-frame-font "Consolas 11" nil t))
+(if (eq system-type 'darwin)
+    (if (display-graphic-p)
+	(set-frame-font "Consolas 13" nil t))
+  (if (display-graphic-p)
+      (set-frame-font "Consolas 11" nil t)))
 
 (dolist (charset '(kana han symbol cjk-misc bopomofo))
   (if (display-graphic-p)

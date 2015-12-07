@@ -10,9 +10,7 @@
   (setq mac-control-modifier 'super)
   ;; (setenv "PATH" (concat (getenv "PATH") ":~/bin:/usr/local/bin"))
   ;; (setq exec-path (append exec-path '("~/bin" "/usr/local/bin")))
-  (setq-default insert-directory-program (executable-find "gls"))
-  (if (display-graphic-p)
-      (set-frame-font "Consolas 13" nil t)))
+  (setq-default insert-directory-program (executable-find "gls")))
 
 (when (eq window-system 'ns)
   (defadvice ns-get-pasteboard (around hack-empty-pasteboard compile activate)
