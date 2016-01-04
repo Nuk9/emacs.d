@@ -24,7 +24,7 @@
 (require 'init-org)
 (require 'init-yas)
 (require 'init-company)
-(require 'init-flycheck)
+;; (require 'init-flycheck)
 (require 'init-magit)
 
 ;; project management

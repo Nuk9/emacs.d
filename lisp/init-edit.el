@@ -30,6 +30,7 @@
 (global-set-key (kbd "M-w") 'copy-region-as-kill)
 (global-set-key (kbd "M-k") 'mark-word)
 (global-set-key (kbd "C-:") 'comment-dwim)
+(global-set-key (kbd "<f5>") '(lambda ()(interactive) (revert-buffer t t)))
 
 (defun kill-whole-line-or-region ()
   "Kill region if active only, otherwise kill current line."
