@@ -21,6 +21,7 @@
 (setq-default backup-inhibited t)
 (setq-default auto-save-default nil)
 
+(global-set-key (kbd "C-o") 'find-file)
 (global-set-key (kbd "<home>") 'move-beginning-of-line)
 (global-set-key (kbd "<end>") 'move-end-of-line)
 (global-set-key (kbd "<f2>") 'rename-this-file-and-buffer)
