@@ -5,7 +5,13 @@
 ;;; Code:
 
 (require-package 'evil)
-(add-hook 'after-init-hook 'evil-mode)
+(evil-mode 1)
+
+(require-package 'key-chord)
+(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+(setq-default key-chord-two-keys-delay 0.1)
+(key-chord-mode 1)
+
 
 (require-package 'vim-empty-lines-mode)
 (add-hook 'after-init-hook 'vim-empty-lines-mode)
