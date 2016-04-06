@@ -5,6 +5,7 @@
 ;;; Code:
 (setq-default inhibit-startup-message t)
 
+(require-package 'color-theme-solarized)
 (load-theme 'sanityinc-solarized-light t)
 
 (menu-bar-mode nil)
@@ -25,8 +26,6 @@
 ;; Test display of CJK fonts
 ;; いろはにほへとちにぬるを
 ;; 花朵艳丽终将散落，谁人世间能长久好
-;; にこにこに
-;; 貴方のハートにニコニコに
 ;; 微风送客软语伴茶
 
 (provide 'init-theme)
