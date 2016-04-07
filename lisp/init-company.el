@@ -24,7 +24,6 @@
  '(company-preview-common ((t (:inherit nil :foreground "darkred"))))
  '(company-tooltip-annotation ((t (:inherit company-tooltip :foreground "black"))))
  )
-
 (defvar company-mode/enable-yas t
   "Enable yasnippet for all backends.")
 

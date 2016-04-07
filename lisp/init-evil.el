@@ -12,14 +12,14 @@
 (setq-default key-chord-two-keys-delay 0.1)
 (key-chord-mode 1)
 
-
 (require-package 'vim-empty-lines-mode)
 (add-hook 'after-init-hook 'vim-empty-lines-mode)
 
 (require-package 'powerline)
 (require-package 'airline-themes)
 (require 'airline-themes)
-(load-theme 'airline-solarized-alternate-gui)
+(setq-default custom-safe-themes t)
+(load-theme 'airline-solarized-alternate-gui t)
 
 (provide 'init-evil)
 
