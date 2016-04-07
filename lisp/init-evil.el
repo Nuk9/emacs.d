@@ -18,7 +18,8 @@
 (require-package 'powerline)
 (require-package 'airline-themes)
 (require 'airline-themes)
-(load-theme 'airline-solarized-alternate-gui)
+(setq-default custom-safe-themes t)
+(load-theme 'airline-solarized-alternate-gui t)
 
 (provide 'init-evil)
 
