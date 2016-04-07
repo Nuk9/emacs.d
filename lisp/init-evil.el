@@ -12,9 +12,8 @@
 (setq-default key-chord-two-keys-delay 0.1)
 (key-chord-mode 1)
 
-
 (require-package 'vim-empty-lines-mode)
-(add-hook 'after-init-hook 'vim-empty-lines-mode)
+(global-vim-empty-lines-mode)
 
 (require-package 'powerline)
 (require-package 'airline-themes)
