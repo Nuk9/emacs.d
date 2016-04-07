@@ -30,6 +30,9 @@
 (require 'init-perl)
 (require 'init-rust)
 
+;; Project related settings
+(require 'init-project)
+
 (require 'init-mac)
 
 (provide 'init)

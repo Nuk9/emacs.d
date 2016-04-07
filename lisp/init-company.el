@@ -21,7 +21,7 @@
  '(company-tooltip-selection        ((t (:background "steelblue" :foreground "white"))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :foreground "white"))))
  '(company-tooltip-common ((t (:inherit company-tooltip :foreground "black"))))
- '(company-preview-common ((t (:inherit nil :foreground "darkred"))))
+ '(company-preview-common ((t (:inherit nil :background "transparent" :foreground "darkred"))))
  '(company-tooltip-annotation ((t (:inherit company-tooltip :foreground "black"))))
  )
 (defvar company-mode/enable-yas t
