@@ -10,7 +10,8 @@
 ;;; Theme
 (require-package 'color-theme-solarized)
 ;;; ivy and smex
-(require-package-load 'smex)
+(require-package-load 'swiper)
+(require-package-load 'ivy)
 ;;; Dired
 (require-package-load 'dired+)
 (require-package-load 'dired-sort)

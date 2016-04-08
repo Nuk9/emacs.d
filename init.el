@@ -16,6 +16,7 @@
 (require 'init-buffer)
 (require 'init-window)
 (require 'init-edit)
+(require 'init-ivy)
 (require 'init-evil)
 
 (require 'init-dired)

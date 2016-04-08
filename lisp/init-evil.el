@@ -6,11 +6,11 @@
 
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
-  "e" 'find-file
+  "f" 'find-file
   "b" 'switch-to-buffer
   "k" 'kill-buffer
   "p" 'find-file-in-project
-  "x" 'smex)
+  "x" 'counsel-M-x)
 (setq-default evil-leader/no-prefix-mode-rx
 	      '("magit-*-mode"))
 (global-evil-leader-mode)
