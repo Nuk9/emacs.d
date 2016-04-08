@@ -4,9 +4,6 @@
 
 ;;; Code:
 
-(require-package-load 'dired+)
-(require-package-load 'dired-sort)
-
 (let ((gls (executable-find "gls")))
   (when gls (setq-default insert-directory-program gls)))
 (setq-default dired-omit-verbose nil)

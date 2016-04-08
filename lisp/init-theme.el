@@ -5,7 +5,6 @@
 ;;; Code:
 (setq-default inhibit-startup-message t)
 
-(require-package 'color-theme-solarized)
 (load-theme 'sanityinc-solarized-light t)
 
 (menu-bar-mode nil)

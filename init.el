@@ -9,15 +9,16 @@
 (defconst *is-a-mac* (eq system-type 'darwin))
 
 (require 'init-elpa)
+(require 'init-packages)
 (require 'init-utils)
 
 (require 'init-theme)
 (require 'init-buffer)
 (require 'init-window)
 (require 'init-edit)
-(require 'init-dired)
 (require 'init-evil)
 
+(require 'init-dired)
 (require 'init-org)
 (require 'init-yas)
 (require 'init-company)
