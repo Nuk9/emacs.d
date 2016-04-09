@@ -6,8 +6,6 @@
 
 (require-package-load 'company)
 (add-hook 'after-init-hook 'global-company-mode)
-;;; manually manage backends myself
-;; (setq-default company-backends '(company-keywords company-yasnippet))
 
 (global-set-key (kbd "TAB") #'company-indent-or-complete-common)
 (setq-default company-tooltip-align-annotations t)
@@ -21,12 +19,11 @@
  '(company-tooltip-selection        ((t (:background "steelblue" :foreground "white"))))
  '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :foreground "white"))))
  '(company-tooltip-common ((t (:inherit company-tooltip :foreground "black"))))
- '(company-preview-common ((t (:inherit nil :background "transparent" :foreground "darkred"))))
- '(company-tooltip-annotation ((t (:inherit company-tooltip :foreground "black"))))
- )
+ '(company-preview-common ((t (:inherit default :foreground "darkred"))))
+ '(company-tooltip-annotation ((t (:inherit company-tooltip :foreground "black")))))
+
 (defvar company-mode/enable-yas t
   "Enable yasnippet for all backends.")
-
 (defun company-mode/backend-with-yas (backend)
   "Set BACKEND with yas."
   (if (or (not company-mode/enable-yas) (and (listp backend) (member 'company-yasnippet backend)))
