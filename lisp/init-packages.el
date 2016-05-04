@@ -25,6 +25,9 @@
 ;;; Project Management
 (require-package-load 'find-file-in-project)
 
+;;; Magit
+(require-package 'magit)
+
 (provide 'init-packages)
 
 ;;; init-packages.el ends here
