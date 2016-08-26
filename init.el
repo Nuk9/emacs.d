@@ -31,6 +31,7 @@
 (require 'init-elisp)
 (require 'init-perl)
 (require 'init-rust)
+(require 'init-haskell)
 
 ;; Project related settings
 (require 'init-project)
