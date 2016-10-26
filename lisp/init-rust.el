@@ -4,6 +4,7 @@
 
 ;;; Code:
 (require-package-load 'rust-mode)
+(setq-default rust-indent-offset 2)
 
 (require-package-load 'exec-path-from-shell)
 (exec-path-from-shell-initialize)

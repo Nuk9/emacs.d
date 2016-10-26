@@ -37,7 +37,6 @@
      (define-key dired-mode-map (kbd "s-o") 'dired-omit-mode)
      (define-key dired-mode-map (kbd "{") 'ergoemacs-open-in-external-app)
      (define-key dired-mode-map (kbd "}") 'ergoemacs-open-in-desktop)
-     (define-key dired-mode-map (kbd "<f2>") 'dired-rename-file)
      (define-key dired-mode-map (kbd "c") 'dired-new-file)
      (define-key dired-mode-map (kbd "<backspace>")
        (lookup-key dired-mode-map (kbd "^")))
@@ -68,7 +67,8 @@
        ((string-equal system-type "gnu/linux")
         (mapc (lambda (fPath) (let
                              ((process-connection-type nil))
-                           (start-process "" nil "xdg-open" fPath))) myFileList))))))
+                           (start-process "" nil "open" fPath))) myFileList))))))
+
 ;; show the file in a file manager
 (defun ergoemacs-open-in-desktop ()
   "Show current file in desktop (OS's file manager)."
@@ -78,7 +78,7 @@
     (w32-shell-execute "explore" (replace-regexp-in-string "/" "\\" default-directory t t)))
    ((string-equal system-type "darwin") (shell-command "open ."))
    ((string-equal system-type "gnu/linux")
-    (let ((process-connection-type nil)) (start-process "" nil "xdg-open" ".")))))
+    (let ((process-connection-type nil)) (start-process "" nil "open" ".")))))
 
 
 (provide 'init-dired)

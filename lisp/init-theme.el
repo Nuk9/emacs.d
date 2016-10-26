@@ -10,21 +10,20 @@
 (menu-bar-mode nil)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
-
+(setq-default ring-bell-function 'ignore)
 (setq-default custom-safe-themes t)
 (defun xzhao/set-frame-theme (frame)
   "Set FRAME theme."
   (load-theme 'sanityinc-solarized-dark t)
   (load-theme 'airline-solarized-alternate-gui t)
   )
-
 (defun xzhao/set-frame-font (frame)
   "Set font of newly created FRAME."
   (if (eq system-type 'darwin)
     (if (display-graphic-p)
 	(set-frame-font "Consolas 13" nil frame))
   (if (display-graphic-p)
-      (set-frame-font "Consolas 11" nil frame)))
+      (set-frame-font "Monospace 11" nil frame)))
  (dolist (charset '(kana han symbol cjk-misc bopomofo))
   (if (display-graphic-p)
       (set-fontset-font (frame-parameter nil 'font)
