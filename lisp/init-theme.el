@@ -14,7 +14,7 @@
 (setq-default custom-safe-themes t)
 (defun xzhao/set-frame-theme (frame)
   "Set FRAME theme."
-  (load-theme 'sanityinc-solarized-light t)
+  (load-theme 'sanityinc-solarized-dark t)
   (load-theme 'airline-solarized-alternate-gui t)
   )
 
