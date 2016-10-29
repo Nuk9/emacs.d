@@ -10,6 +10,7 @@
 (global-set-key (kbd "TAB") #'company-indent-or-complete-common)
 (setq-default company-tooltip-align-annotations t)
 (setq-default company-idle-delay 0.2)
+(setq-default company-minimum-prefix-length 2) ;; disable company completion with first char
 
 ;; set company theme
 (require-package-load 'color)
