@@ -6,7 +6,7 @@
 
 (evil-leader/set-leader "<SPC>")
 (evil-leader/set-key
-  "f" 'find-file
+  "e" 'find-file
   "b" 'switch-to-buffer
   "k" 'kill-this-buffer
   "p" 'find-file-in-project
