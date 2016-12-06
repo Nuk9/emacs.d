@@ -10,7 +10,10 @@
   "b" 'switch-to-buffer
   "k" 'kill-this-buffer
   "p" 'find-file-in-project
-  "x" 'counsel-M-x)
+  "x" 'counsel-M-x
+  "3" 'split-window-right
+  "u" 'delete-other-windows
+  "o" 'other-window)
 (setq-default evil-leader/no-prefix-mode-rx
 	      '("magit-*-mode"))
 (global-evil-leader-mode)
