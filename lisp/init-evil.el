@@ -10,8 +10,9 @@
   "b" 'switch-to-buffer
   "k" 'kill-this-buffer
   "p" 'find-file-in-project
-  "x" 'counsel-M-x
+  "x" 'execute-extended-command
   "3" 'split-window-right
+  "j" 'dired-jump
   "u" 'delete-other-windows
   "o" 'other-window)
 (setq-default evil-leader/no-prefix-mode-rx
