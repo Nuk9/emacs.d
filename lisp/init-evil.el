@@ -13,6 +13,7 @@
   "x" 'counsel-M-x
   "3" 'split-window-right
   "u" 'delete-other-windows
+  "j" 'dired-jump
   "o" 'other-window)
 (setq-default evil-leader/no-prefix-mode-rx
 	      '("magit-*-mode"))
