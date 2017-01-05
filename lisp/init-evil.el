@@ -6,19 +6,9 @@
 
 (evil-leader/set-leader "<SPC>")
 
-(deffun create-directory dir
-  "Create parent directory if not exists while visiting file."
-  (interactive)
-  (unless (file-exists-p filename)
-    (let ((dir (file-name-directory filename)))
-      (unless (file-exists-p dir)
-        (make-directory dir)))))
-
 
 (evil-leader/set-key
   "e" 'find-file
-  ;; "c" '
-  ;; "+" '
   "b" 'switch-to-buffer
   "k" 'kill-this-buffer
   "p" 'find-file-in-project
@@ -39,7 +29,7 @@
 (evil-mode 1)
 
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
-(setq-default key-chord-two-keys-delay 0.1)
+(setq-default key-chord-two-keys-delay 0.2)
 (key-chord-mode 1)
 
 (provide 'init-evil)
