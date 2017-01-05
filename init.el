@@ -52,9 +52,10 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(delete-selection-mode nil)
  '(package-selected-packages
    (quote
-    (magit markdown-mode+ flycheck-rust company-racer racer exec-path-from-shell rust-mode rainbow-delimiters flycheck company yasnippet vim-empty-lines-mode swiper key-chord find-file-in-project evil-leader dired-sort dired+ dash color-theme-solarized color-theme-sanityinc-solarized airline-themes))))
+    (flycheck-perl6 perl6-mode cmake-mode go-mode django-mode magit markdown-mode+ flycheck-rust company-racer racer exec-path-from-shell rust-mode rainbow-delimiters flycheck company yasnippet vim-empty-lines-mode swiper key-chord find-file-in-project evil-leader dired-sort dired+ dash color-theme-solarized color-theme-sanityinc-solarized airline-themes))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
