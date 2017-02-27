@@ -38,6 +38,7 @@
      (define-key dired-mode-map (kbd "{") 'ergoemacs-open-in-external-app)
      (define-key dired-mode-map (kbd "}") 'ergoemacs-open-in-desktop)
      (define-key dired-mode-map (kbd "c") 'dired-new-file)
+     (define-key dired-mode-map (kbd "y") 'dired-copy-filename-as-kill)
      (define-key dired-mode-map (kbd "<backspace>")
        (lookup-key dired-mode-map (kbd "^")))
      (setq-default dired-omit-files-p t)
