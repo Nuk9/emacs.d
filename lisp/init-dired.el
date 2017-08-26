@@ -33,6 +33,7 @@
      (define-key dired-mode-map (kbd "M-i") nil)
      (define-key dired-mode-map (kbd "M-u") nil)
      (define-key dired-mode-map (kbd "C-t") nil)
+     (define-key dired-mode-map (kbd "i") nil) ;; disable dired-maybe-insert-dir
      (define-key dired-mode-map (kbd "r") 'diredp-rename-this-file)
      (define-key dired-mode-map (kbd "s-o") 'dired-omit-mode)
      (define-key dired-mode-map (kbd "{") 'ergoemacs-open-in-external-app)
