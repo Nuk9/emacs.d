@@ -35,6 +35,7 @@
 
 ;; Programming language supports
 (require 'init-prog)
+(require 'init-lsp)
 (require 'init-elisp)
 (require 'init-perl)
 (require 'init-rust)
@@ -56,7 +57,7 @@
  '(delete-selection-mode nil)
  '(package-selected-packages
    (quote
-    (telephone-line elpy flycheck-perl6 perl6-mode cmake-mode go-mode django-mode magit markdown-mode+ flycheck-rust company-racer racer exec-path-from-shell rust-mode rainbow-delimiters flycheck company yasnippet vim-empty-lines-mode swiper key-chord find-file-in-project evil-leader dired-sort dired+ dash color-theme-solarized color-theme-sanityinc-solarized airline-themes))))
+    (lsp-python company-lsp lsp-rust ivy-xref lsp-mode ess etags-select telephone-line elpy flycheck-perl6 perl6-mode cmake-mode go-mode django-mode magit markdown-mode+ flycheck-rust company-racer racer exec-path-from-shell rust-mode rainbow-delimiters flycheck company yasnippet vim-empty-lines-mode swiper key-chord find-file-in-project evil-leader dired-sort dired+ dash color-theme-solarized color-theme-sanityinc-solarized airline-themes))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

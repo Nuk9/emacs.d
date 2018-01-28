@@ -14,6 +14,12 @@
 
 ;; set company theme
 (require-package-load 'color)
+
+
+;; set lsp
+(require-package 'company-lsp)
+(push 'company-lsp company-backends)
+
 ;;; Make company looks like auto-complete mode
 (custom-set-faces
  '(company-tooltip                  ((t (:inherit nil :background "grey" :foreground "black"))))
