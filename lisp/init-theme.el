@@ -13,17 +13,6 @@
 (setq-default ring-bell-function 'ignore)
 (setq-default custom-safe-themes t)
 
-(require-package 'telephone-line)
-(require 'telephone-line)
-(require 'telephone-line-config)
-(setq telephone-line-primary-left-separator 'telephone-line-cubed-left
-      telephone-line-secondary-left-separator 'telephone-line-cubed-hollow-left
-      telephone-line-primary-right-separator 'telephone-line-cubed-right
-      telephone-line-secondary-right-separator 'telephone-line-cubed-hollow-right)
-(setq telephone-line-height 24
-      telephone-line-evil-use-short-tag t)
-(telephone-line-evil-config)
-
 (defun xzhao/set-frame-theme (frame)
   "Set FRAME theme."
   (load-theme 'sanityinc-solarized-dark t)
