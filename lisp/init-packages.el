@@ -17,10 +17,7 @@
 ;;; Evil
 (require-package-load 'evil-leader)
 (require-package-load 'evil)
-(require-package-load 'vim-empty-lines-mode)
-(require-package-load 'powerline)
 (require-package-load 'key-chord)
-(require-package-load 'airline-themes)
 
 ;;; Project Management
 (require-package-load 'find-file-in-project)

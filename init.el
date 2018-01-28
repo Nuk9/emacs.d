@@ -49,23 +49,3 @@
 
 (provide 'init)
 ;;; init.el ends here
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(delete-selection-mode nil)
- '(package-selected-packages
-   (quote
-    (lsp-python company-lsp lsp-rust ivy-xref lsp-mode ess etags-select telephone-line elpy flycheck-perl6 perl6-mode cmake-mode go-mode django-mode magit markdown-mode+ flycheck-rust company-racer racer exec-path-from-shell rust-mode rainbow-delimiters flycheck company yasnippet vim-empty-lines-mode swiper key-chord find-file-in-project evil-leader dired-sort dired+ dash color-theme-solarized color-theme-sanityinc-solarized airline-themes))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(company-preview-common ((t (:inherit default :foreground "darkred"))))
- '(company-tooltip ((t (:inherit nil :background "grey" :foreground "black"))))
- '(company-tooltip-annotation ((t (:inherit company-tooltip :foreground "black"))))
- '(company-tooltip-common ((t (:inherit company-tooltip :foreground "black"))))
- '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :foreground "white"))))
- '(company-tooltip-selection ((t (:background "steelblue" :foreground "white")))))

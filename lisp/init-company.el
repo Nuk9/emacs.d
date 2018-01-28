@@ -15,7 +15,6 @@
 ;; set company theme
 (require-package-load 'color)
 
-
 ;; set lsp
 (require-package 'company-lsp)
 (push 'company-lsp company-backends)
