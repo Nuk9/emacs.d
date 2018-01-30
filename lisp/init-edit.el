@@ -7,8 +7,8 @@
 (setq initial-major-mode 'org-mode)
 (setq initial-scratch-message nil)
 
-;; (setq-default indicate-buffer-boundaries
-;;               '((up . nil) (down . nil) (t . left)))
+(setq-default indicate-buffer-boundaries
+              '((up . nil) (down . nil) (t . left)))
 
 ;; (setq-default cursor-type 'bar)
 (setq-default column-number-mode t)

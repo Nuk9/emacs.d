@@ -49,3 +49,23 @@
 
 (provide 'init)
 ;;; init.el ends here
+(custom-set-variables
+ ;; custom-set-variables was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(delete-selection-mode nil)
+ '(package-selected-packages
+   (quote
+    (zenburn-theme yasnippet vim-empty-lines-mode telephone-line swiper rainbow-delimiters racer pyvenv magit lsp-rust lsp-python key-chord ivy-xref highlight-indentation flycheck-rust find-file-in-project exec-path-from-shell evil-leader etags-select ess dired-sort dired+ company-racer company-lsp color-theme-sanityinc-solarized))))
+(custom-set-faces
+ ;; custom-set-faces was added by Custom.
+ ;; If you edit it by hand, you could mess it up, so be careful.
+ ;; Your init file should contain only one such instance.
+ ;; If there is more than one, they won't work right.
+ '(company-preview-common ((t (:inherit default :foreground "darkred"))))
+ '(company-tooltip ((t (:inherit nil :background "grey" :foreground "black"))))
+ '(company-tooltip-annotation ((t (:inherit company-tooltip :foreground "black"))))
+ '(company-tooltip-common ((t (:inherit company-tooltip :foreground "black"))))
+ '(company-tooltip-common-selection ((t (:inherit company-tooltip-selection :foreground "white"))))
+ '(company-tooltip-selection ((t (:background "steelblue" :foreground "white")))))

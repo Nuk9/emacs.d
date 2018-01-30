@@ -6,7 +6,6 @@
 
 (evil-leader/set-leader "<SPC>")
 
-
 (evil-leader/set-key
   "e" 'find-file
   "b" 'switch-to-buffer
@@ -21,6 +20,10 @@
   "C-e" 'eval-last-sexp
   "C-/" 'undo-tree-redo
   "<f12>" 'magit-status)
+
+(define-key evil-normal-state-map "gd" 'xref-find-definitions-other-window)
+(define-key evil-normal-state-map "gb" 'pop-global-mark)
+
 
 (setq-default evil-leader/no-prefix-mode-rx
 	      '("magit-*-mode"))
