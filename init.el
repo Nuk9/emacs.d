@@ -57,7 +57,7 @@
  '(delete-selection-mode nil)
  '(package-selected-packages
    (quote
-    (zenburn-theme yasnippet vim-empty-lines-mode telephone-line swiper rainbow-delimiters racer pyvenv magit lsp-rust lsp-python key-chord ivy-xref highlight-indentation flycheck-rust find-file-in-project exec-path-from-shell evil-leader etags-select ess dired-sort dired+ company-racer company-lsp color-theme-sanityinc-solarized))))
+    (shell-toggle hlinum zenburn-theme yasnippet vim-empty-lines-mode telephone-line swiper rainbow-delimiters racer pyvenv magit lsp-rust lsp-python key-chord ivy-xref highlight-indentation flycheck-rust find-file-in-project exec-path-from-shell evil-leader etags-select ess dired-sort dired+ company-racer company-lsp color-theme-sanityinc-solarized))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
