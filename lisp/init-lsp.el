@@ -6,8 +6,6 @@
 
 (require-package 'lsp-mode)
 
-(with-eval-after-load 'lsp-mode
-  (require 'lsp-flycheck))
 ;; lsp-cc
 (require 'cc-mode)
 (require 'cquery)

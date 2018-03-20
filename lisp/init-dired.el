@@ -25,7 +25,7 @@
   (revert-buffer)
   (dired-goto-file (expand-file-name file)))
 
-(eval-after-load 'dired+
+(eval-after-load 'dired
   '(progn
      ;; prevent global keysettings being overwritten
      (defvar dired-mode-map)
@@ -43,9 +43,6 @@
      (define-key dired-mode-map (kbd "<backspace>")
        (lookup-key dired-mode-map (kbd "^")))
      (setq-default dired-omit-files-p t)
-     (defvar dired-omit-files)
-     (setq-default dired-omit-files
-           (concat dired-omit-files "\\|^\\..+$"))
      ))
 
 ;; dired-open-in-external-app functions

@@ -12,8 +12,7 @@
 ;;; ivy and smex
 (require-package-load 'swiper)
 ;;; Dired
-(require-package-load 'dired+)
-(require-package-load 'dired-sort)
+;; (require-package-load 'dired-sort)
 ;;; Evil
 (require-package-load 'evil-leader)
 (require-package-load 'evil)
