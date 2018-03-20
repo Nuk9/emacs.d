@@ -35,6 +35,7 @@
 
 ;; Programming language supports
 (require 'init-prog)
+(require 'init-shell)
 (require 'init-lsp)
 (require 'init-elisp)
 (require 'init-perl)

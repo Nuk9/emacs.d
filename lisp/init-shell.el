@@ -3,6 +3,8 @@
 ;;; Commentary:
 ;;; Author: Xu Zhao (i@xuzhao.net)
 
+(require 'shell-toggle)
 
-(require-package-load 'shell-toggle)
 (global-set-key (kbd "<f4>") 'shell-toggle)
+
+(provide 'init-shell)
