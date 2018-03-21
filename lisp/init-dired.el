@@ -79,6 +79,7 @@
    ((string-equal system-type "gnu/linux")
     (let ((process-connection-type nil)) (start-process "" nil "open" ".")))))
 
+(global-set-key (kbd "C-x C-j") 'dired-jump)
 
 (provide 'init-dired)
 ;;; init-dired.el ends here
