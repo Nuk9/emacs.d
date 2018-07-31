@@ -61,7 +61,9 @@
 ;;    (find-alternate-file (concat "/sudo:root@localhost:" buffer-file-name))))
 
 
-
+(require-package 'edit-server)
+(require 'edit-server)
+(edit-server-start)
 
 (provide 'init-edit)
 

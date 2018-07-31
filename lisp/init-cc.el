@@ -4,6 +4,7 @@
 
 ;;; Code:
 
+(setq-default c-default-style "linux")
 
 (provide 'init-cc)
 
