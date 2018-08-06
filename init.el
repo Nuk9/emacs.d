@@ -21,6 +21,7 @@
 
 (require 'init-theme)
 (require 'init-buffer)
+(require 'init-recentf)
 (require 'init-window)
 (require 'init-edit)
 (require 'init-ivy)

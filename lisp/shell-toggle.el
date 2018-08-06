@@ -1,4 +1,4 @@
-;;; shell-toggle.el --- Toggle to and from the shell buffer
+;;;; shell-toggle.el --- Toggle to and from the shell buffer
 ;;;
 ;;; Copyright (C) 1997, 1998 Mikael Sjödin (mic@docs.uu.se)
 ;;; Copyright (C) 2002, 2004 Matthieu Moy
@@ -235,6 +235,12 @@ If no configuration has been stored, just burry the shell buffer."
       (get-buffer-window buffer 0) ; better than 'visible
       )))
 
+(defun split-window-vertically-goto-shell-buffer (buffer)
+  "Split window vertically and goto the shell BUFFER ."
+  (split-window-below 30)
+  (other-window 1)
+  (switch-to-buffer buffer))
+
 (defun shell-toggle-buffer-goto-shell (make-cd)
   "Switch other window to the shell buffer.
 If no shell buffer exists start a new shell and switch to it in
@@ -272,7 +278,8 @@ Stores the window configuration before creating and/or switching window."
 	  (let ((in-current-frame
 		 (get-buffer-window shell-buffer nil)))
 	    (if in-current-frame
-		(switch-to-buffer-other-window shell-buffer)
+		;;(switch-to-buffer-other-window shell-buffer)
+		(split-window-vertically-goto-shell-buffer shell-buffer)
 	      (let ((buffer-window
 		     (get-buffer-window shell-buffer t)))
 		(if buffer-window ;; buffer is active in other frame
@@ -280,7 +287,7 @@ Stores the window configuration before creating and/or switching window."
 		      (select-frame-set-input-focus (window-frame buffer-window))
 		      (select-window buffer-window))
 		  ;; buffer is shown nowhere
-		  (switch-to-buffer-other-window shell-buffer)))))
+		  (split-window-vertically-goto-shell-buffer shell-buffer)))))
       ;; Sometimes an error is generated when I call `shell'
       ;; (it has to do with my shell-mode-hook which inserts text into the
       ;; newly created shell-buffer and thats not allways a good idea).
@@ -336,7 +343,7 @@ create a new window and switch to it.
     ;; create a new one.
     (if (eq this-window (selected-window))
 	(progn
-	  (split-window-vertically)
+	  (split-window-below 30)
           (other-window 1)))))
 
 (provide 'shell-toggle)
