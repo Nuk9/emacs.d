@@ -7,8 +7,6 @@
 
 (require 'init-elpa)
 
-;;; Theme
-(require-package 'color-theme-sanityinc-solarized)
 ;;; ivy and smex
 (require-package-load 'swiper)
 ;;; Dired

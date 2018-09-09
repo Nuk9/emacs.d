@@ -10,13 +10,14 @@
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
 (setq-default ring-bell-function 'ignore)
-(setq-default custom-safe-themes t)
 
-(require-package 'spacemacs-theme)
+(require-package 'all-the-icons)
+(require-package 'doom-modeline)
+(doom-modeline-init)
 
 (defun xzhao/set-frame-theme (frame)
   "Set FRAME theme."
-  (load-theme 'spacemacs-dark))
+  (load-theme 'doom-one t))
 
 (defun xzhao/set-frame-font (frame)
   "Set font of newly created FRAME."
