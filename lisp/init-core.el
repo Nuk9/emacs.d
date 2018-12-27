@@ -5,6 +5,7 @@
 ;;; Code:
 
 ;; define variables
+(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 (defvar emacs-private-dir
   (concat (file-truename user-emacs-directory) "private/")
   "Where your private customizations are placed.  Must end in a slash.")

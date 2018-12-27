@@ -9,15 +9,10 @@
 
 ;;; ivy and smex
 (require-package-load 'swiper)
-;;; Dired
-;; (require-package-load 'dired-sort)
 ;;; Evil
 (require-package-load 'evil-leader)
 (require-package-load 'evil)
 (require-package-load 'key-chord)
-
-;;; Project Management
-(require-package-load 'find-file-in-project)
 
 ;;; Magit
 (require-package 'magit)

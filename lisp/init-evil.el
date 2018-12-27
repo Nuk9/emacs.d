@@ -8,6 +8,7 @@
 (require 'evil-states)
 (require 'evil-search)
 (require 'evil-leader)
+(require 'ivy)
 
 ;; evil-leader shortcuts
 (evil-leader/set-leader "<SPC>")
@@ -27,7 +28,6 @@
   "o" 'other-window
   "0" 'delete-window
   "C-e" 'eval-last-sexp
-  "C-/" 'undo-tree-redo
   "<f12>" 'magit-status)
 
 (define-key evil-normal-state-map "gd" 'xref-find-definitions-other-window)
@@ -36,15 +36,16 @@
 (setq-default evil-leader/no-prefix-mode-rx
 	      '("magit-*-mode"))
 (global-evil-leader-mode)
-
 (evil-mode 1)
-
-(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
-(setq-default key-chord-two-keys-delay 0.2)
-(key-chord-mode 1)
-
 ;; Use evil search instead of isearch
 (evil-select-search-module 'evil-search-module 'evil-search)
+
+;; key-chords
+(key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
+(key-chord-define minibuffer-local-map "jk" 'keyboard-escape-quit)
+(key-chord-define ivy-minibuffer-map "jk" 'keyboard-escape-quit)
+(setq-default key-chord-two-keys-delay 0.2)
+(key-chord-mode 1)
 
 (provide 'init-evil)
 

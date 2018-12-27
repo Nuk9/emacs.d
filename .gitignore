@@ -1,5 +1,6 @@
 var/
-session*
+*session*
+.dir*
 recentf
 auto-save-list/
 *.ec
