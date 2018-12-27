@@ -5,15 +5,9 @@
 ;;; Code:
 
 ;; define variables
-(defvar xumacs-private-dir
-  (or (getenv "XUMACSDIR")
-      (let ((xdg-path
-	     (expand-file-name "xumacs/"
-			       (or (getenv "XDG_CONFIG_HHOME")
-				   "~/.config"))))
-	(if (file-directory-p xdg-path) xdg-path))
-      "~/.xumacs.d/")
-  "Where your private customizations are placed.  Must end in a slash.  Respects XDG directory conventions if ~/.config/xumacs/ exists.  Otherwise use ~/.xumacs.d/.")
+(defvar emacs-private-dir
+  (concat (file-truename user-emacs-directory) "private/")
+  "Where your private customizations are placed.  Must end in a slash.")
 
 ;;
 ;; Emacs core configurations
@@ -29,8 +23,8 @@
 (setq-default
  ;; be quiet on startup
  inhibit-startup-message t
- inhibit-startup-echo-area-message user-login-name
  inhibit-default-init t
+ inhibit-startup-echo-area-message (user-login-name)
  initial-major-mode 'org-mode
  initial-scratch-message nil
  ;; History & backup settings
@@ -38,7 +32,6 @@
  create-lockfiles nil
  history-length 500
  make-backup-files nil)
-
 
 (provide 'init-core)
 

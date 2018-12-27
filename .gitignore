@@ -14,4 +14,5 @@ flycheck_init.el
 tramp
 image-dired
 abbrev_defs
+private/*
 .#*

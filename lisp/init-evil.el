@@ -3,9 +3,14 @@
 ;;; Author: Xu Zhao (i@xuzhao.net)
 
 ;;; Code:
+(require 'init-elpa)
+(require-package-load 'evil)
+(require 'evil-states)
+(require 'evil-search)
+(require 'evil-leader)
 
+;; evil-leader shortcuts
 (evil-leader/set-leader "<SPC>")
-
 (evil-leader/set-key
   "e" 'find-file
   "b" 'switch-to-buffer
@@ -15,6 +20,7 @@
   "s" 'projectile-switch-project
   "P" 'projectile-find-file-in-known-projects
   "x" 'execute-extended-command
+  "i" 'package-install
   "3" '(lambda () (interactive)(split-window-right) (other-window 1) (dired-jump) (revert-buffer))
   "j" '(lambda () (interactive) (dired-jump) (revert-buffer))
   "u" 'delete-other-windows

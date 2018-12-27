@@ -7,7 +7,7 @@
 (require 'init-core)
 
 (setq-default projectile-known-projects-file
-	      (concat xumacs-private-dir "projects"))
+	      (concat emacs-private-dir "projects"))
 (projectile-mode +1)
 
 (provide 'init-projectile)

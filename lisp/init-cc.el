@@ -16,14 +16,13 @@
 				   (brace-list-open . 0)
 				   (statement-case-open . +)))))
 
-(defun xumacs-c++-mode-hook ()
+(defun xu-c++-mode-hook ()
   "C++ mode hooks."
   (c-set-style "cpp-style")
   (auto-fill-mode)
   (c-toggle-auto-hungry-state 1))
 
-(add-hook 'c++-mode-hook 'xumacs-c++-mode-hook)
-
+(add-hook 'c++-mode-hook 'xu-c++-mode-hook)
 
 ;; ccls configuration
 (require-package-load 'ccls)
