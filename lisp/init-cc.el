@@ -8,7 +8,7 @@
 (setq-default c-basic-offset 4)
 
 ; style I want to use in c++ mode
-(c-add-style "cpp-style" 
+(c-add-style "cpp-style"
 	     '("stroustrup"
 	       (indent-tabs-mode . nil)        ; use spaces rather than tabs
 	       (c-basic-offset . 4)            ; indent by four spaces
@@ -16,12 +16,18 @@
 				   (brace-list-open . 0)
 				   (statement-case-open . +)))))
 
-(defun my-c++-mode-hook ()
+(defun xumacs-c++-mode-hook ()
+  "C++ mode hooks."
   (c-set-style "cpp-style")
-  (auto-fill-mode)         
+  (auto-fill-mode)
   (c-toggle-auto-hungry-state 1))
 
-(add-hook 'c++-mode-hook 'my-c++-mode-hook)
+(add-hook 'c++-mode-hook 'xumacs-c++-mode-hook)
+
+
+;; ccls configuration
+(require-package-load 'ccls)
+(setq-default ccls-executable "ccls")
 
 (provide 'init-cc)
 

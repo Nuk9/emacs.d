@@ -12,8 +12,8 @@
 (setq-default diredp-hide-details-propagate-flag nil)
 (setq-default dired-isearch-filenames t)     ; Dired mode search filename only
 (setq-default dired-dwim-target t)
-(setq-default dired-recursive-copies (quote always))
-(setq-default dired-recursive-deletes (quote top))
+(setq-default dired-recursive-copies 'always)
+(setq-default dired-recursive-deletes 'always)
 (put 'dired-find-alternate-file 'disabled nil)
 
 (defun dired-new-file (file)

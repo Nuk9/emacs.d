@@ -11,6 +11,8 @@
   "b" 'switch-to-buffer
   "k" 'kill-this-buffer
   "p" 'find-file-in-project
+  "s" 'projectile-switch-project
+  "P" 'projectile-find-file-in-known-projects
   "x" 'execute-extended-command
   "3" '(lambda () (interactive)(split-window-right) (other-window 1) (dired-jump) (revert-buffer))
   "j" '(lambda () (interactive) (dired-jump) (revert-buffer))
@@ -23,7 +25,6 @@
 
 (define-key evil-normal-state-map "gd" 'xref-find-definitions-other-window)
 (define-key evil-normal-state-map "gb" 'pop-global-mark)
-
 
 (setq-default evil-leader/no-prefix-mode-rx
 	      '("magit-*-mode"))

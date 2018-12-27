@@ -13,11 +13,12 @@
 
 (require-package 'all-the-icons)
 (require-package 'doom-modeline)
-(doom-modeline-init)
+(require-package 'doom-themes)
 
 (defun xzhao/set-frame-theme (frame)
   "Set FRAME theme."
-  (load-theme 'doom-one t))
+  (load-theme 'doom-one t)
+  (doom-modeline-init))
 
 (defun xzhao/set-frame-font (frame)
   "Set font of newly created FRAME."

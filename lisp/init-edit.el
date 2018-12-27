@@ -4,13 +4,12 @@
 
 ;;; Code:
 
-(setq initial-major-mode 'org-mode)
-(setq initial-scratch-message nil)
+(setq-default
+ ;; Whitespace
+ delete-trailing-lines nil
+ tab-always-indent t
+ require-final-newline t)
 
-(setq-default indicate-buffer-boundaries
-              '((up . nil) (down . nil) (t . left)))
-
-;; (setq-default cursor-type 'bar)
 (setq-default column-number-mode t)
 
 (blink-cursor-mode 0)

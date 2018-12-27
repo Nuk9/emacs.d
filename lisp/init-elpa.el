@@ -6,9 +6,7 @@
 
 (require 'package)
 
-(add-to-list 'package-archives `("melpa" . ,(if (< emacs-major-version 24)
-                                                "http://melpa.org/packages/"
-                                              "https://melpa.org/packages/")))
+(add-to-list 'package-archives `("melpa" . , "https://melpa.org/packages/"))
 
 (defun require-package (package &optional min-version no-refresh)
   "Install given PACKAGE, optionally requiring MIN-VERSION.
@@ -23,10 +21,8 @@ re-downloaded in order to locate PACKAGE."
         (require-package package min-version t)))))
 
 (defun require-package-load (package)
-  "Download and load PACKAGE."
   (require-package package)
   (require package))
-
 (setq package-enable-at-startup nil)
 (package-initialize)
 
@@ -37,7 +33,8 @@ re-downloaded in order to locate PACKAGE."
   (save-window-excursion
     (list-packages)
     (package-menu-mark-upgrades)
-    (package-menu-execute 'no-query)))
+    (package-menu-execute 'no-query)
+    (package-autoremove)))
 
 (global-set-key (kbd "C-x i") 'package-install)
 
