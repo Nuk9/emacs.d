@@ -4,13 +4,6 @@
 
 ;;; Code:
 
-(setq-default inhibit-startup-message t)
-(global-visual-line-mode t)
-(menu-bar-mode nil)
-(tool-bar-mode -1)
-(scroll-bar-mode -1)
-(setq-default ring-bell-function 'ignore)
-
 (require-package 'all-the-icons)
 (require-package 'doom-modeline)
 (require-package 'doom-themes)
@@ -43,10 +36,13 @@
   (xzhao/set-frame-theme t))
 (ad-activate 'server-create-window-system-frame)
 
+;; Highlight TODO, NOTE, and FIXME tags
+(require-package-load 'hl-todo)
+(global-hl-todo-mode)
+
 ;; Test display of CJK fonts
 ;; いろはにほへとちにぬるを
 ;; 花朵艳丽终将散落，谁人世间能长久好
-;; 微风送客软语伴茶
 
 (provide 'init-theme)
 

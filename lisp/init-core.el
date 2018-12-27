@@ -13,6 +13,7 @@
 ;;
 ;; Emacs core configurations
 
+
 ;; UTF-8 as the default coding system
 (when (fboundp 'set-charset-priority)
   (set-charset-priority 'unicode))     ; pretty
@@ -28,11 +29,15 @@
  inhibit-startup-echo-area-message (user-login-name)
  initial-major-mode 'org-mode
  initial-scratch-message nil
+ ring-bell-function 'ignore
  ;; History & backup settings
  auto-save-default nil
  create-lockfiles nil
  history-length 500
  make-backup-files nil)
+(menu-bar-mode -1)
+(tool-bar-mode -1)
+(scroll-bar-mode -1)
 
 (provide 'init-core)
 

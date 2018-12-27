@@ -31,9 +31,9 @@
  auto-save-default nil)
 
 (blink-cursor-mode 0)
-(delete-selection-mode 1)
-(menu-bar-mode -1)
-(global-display-line-numbers-mode)
+(delete-selection-mode t)
+(global-display-line-numbers-mode t)
+(global-visual-line-mode t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 
 (defun rename-current-file-and-buffer ()
