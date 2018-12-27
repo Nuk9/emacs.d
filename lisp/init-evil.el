@@ -11,6 +11,7 @@
   "b" 'switch-to-buffer
   "k" 'kill-this-buffer
   "p" 'find-file-in-project
+  "c" 'evil-ex-nohighlight
   "s" 'projectile-switch-project
   "P" 'projectile-find-file-in-known-projects
   "x" 'execute-extended-command
@@ -35,6 +36,9 @@
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
 (setq-default key-chord-two-keys-delay 0.2)
 (key-chord-mode 1)
+
+;; Use evil search instead of isearch
+(evil-select-search-module 'evil-search-module 'evil-search)
 
 (provide 'init-evil)
 

@@ -5,21 +5,36 @@
 ;;; Code:
 
 (setq-default
- ;; Whitespace
+ vc-follow-symlinks t
+ ;; formatting
  delete-trailing-lines nil
+ fill-column 80
+ sentence-end-double-space nil
+ word-wrap t
+ ;; Scrolling
+ hscroll-margin 2
+ hscroll-step 1
+ scroll-conservatively 1001
+ scroll-margin 0
+ scroll-preserve-screen-position t
+ ;; Whitespace
+ indent-tabs-mode nil
+ require-final-newline t
  tab-always-indent t
- require-final-newline t)
-
-(setq-default column-number-mode t)
+ tab-width 4
+ ;; Wrapping
+ truncate-lines t
+ truncate-partial-width-windows 50
+ column-number-mode t
+ ;; disable backup
+ backup-inhibited t
+ auto-save-default nil)
 
 (blink-cursor-mode 0)
 (delete-selection-mode 1)
 (menu-bar-mode -1)
 (global-display-line-numbers-mode)
 (defalias 'yes-or-no-p 'y-or-n-p)
-
-(setq-default backup-inhibited t)
-(setq-default auto-save-default nil)
 
 (defun rename-current-file-and-buffer ()
   "Rename the current buffer and file it is visiting."

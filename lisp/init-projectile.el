@@ -4,6 +4,8 @@
 
 ;;; Code:
 
+(require 'init-core)
+
 (setq-default projectile-known-projects-file
 	      (concat xumacs-private-dir "projects"))
 (projectile-mode +1)
