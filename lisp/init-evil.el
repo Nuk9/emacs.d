@@ -26,9 +26,13 @@
   "j" '(lambda () (interactive) (dired-jump) (revert-buffer))
   "u" 'delete-other-windows
   "o" 'other-window
+  "q" 'keyboard-escape-quit
   "0" 'delete-window
   "C-e" 'eval-last-sexp
   "<f12>" 'magit-status)
+
+;; evil custom commands
+(evil-ex-define-cmd "sw[iper]" 'swiper)
 
 (define-key evil-normal-state-map "gd" 'xref-find-definitions-other-window)
 (define-key evil-normal-state-map "gb" 'pop-global-mark)

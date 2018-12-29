@@ -4,14 +4,19 @@
 
 ;;; Code:
 
+
+;; Added by Package.el.  This must come before configurations of
+;; installed packages.  Don't delete this line.  If you don't want it,
+;; just comment it out by adding a semicolon to the start of the line.
+;; You may delete these explanatory comments.
+(package-initialize)
+
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
-;; tricks to boost emacs startup
-(defvar last-file-name-handler-alist file-name-handler-alist)
-(setq gc-cons-threshold 402653184
-      gc-cons-percentage 0.6
-      file-name-handler-alist nil)
+
+(defconst *is-a-mac* (eq system-type 'darwin))
 
 (require 'init-core)
+
 (require 'init-elpa)
 (require 'init-packages)
 (require 'init-utils)
@@ -40,18 +45,10 @@
 (require 'init-python)
 (require 'init-haskell)
 
-;; Project settings
+;; Project related settings
 (require 'init-projectile)
 
 (require 'init-os)
-
-;; After startup, it is important you reset this to some reasonable default.
-;; A large gc-cons-threshold will cause freezing and stuttering during long-term
-;; interactive use. I find these are nice defaults:
-(add-hook 'emacs-startup-hook
-  (lambda () (setq gc-cons-threshold 16777216
-                   gc-cons-percentage 0.1
-                   file-name-handler-alist last-file-name-handler-alist)))
 
 (provide 'init)
 ;;; init.el ends here
