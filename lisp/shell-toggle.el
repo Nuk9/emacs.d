@@ -3,6 +3,7 @@
 ;;; Copyright (C) 1997, 1998 Mikael Sjödin (mic@docs.uu.se)
 ;;; Copyright (C) 2002, 2004 Matthieu Moy
 ;;; Copyright (C) 2015       Akinori MUSHA
+;;; Copyright (C) 2018       Xu Zhao
 ;;;
 ;;; Author: Mikael Sjödin <mic@docs.uu.se>
 ;;;         Matthieu Moy
@@ -258,17 +259,14 @@ Stores the window configuration before creating and/or switching window."
 	(cd-command
 	 ;; Find out which directory we are in (the method differs for
 	 ;; different buffers)
-	 (and make-cd
+	 (and t
               (or (and (buffer-file-name)
                        (file-name-directory (buffer-file-name))
-                       (concat "cd " (shell-quote-argument
-                                      (file-name-directory (buffer-file-name)))))
+                       (concat "cd " (file-name-directory (buffer-file-name))))
                   (and list-buffers-directory
-                       (concat "cd " (shell-quote-argument
-                                      list-buffers-directory)))
+                       (concat "cd " list-buffers-directory))
                   (and default-directory
-                       (concat "cd " (shell-quote-argument
-                                      default-directory)))))))
+                       (concat "cd " default-directory))))))
 
     ;; Switch to an existing shell if one exists, otherwise switch to another
     ;; window and start a new shell
@@ -301,6 +299,7 @@ Stores the window configuration before creating and/or switching window."
     (if (not (get-buffer-process (current-buffer)))
         (setq shell-toggle-shell-buffer
               (funcall shell-toggle-launch-shell)))
+
     (if cd-command
 	(progn
           (cond ((eq shell-toggle-launch-shell 'shell)
@@ -314,21 +313,20 @@ Stores the window configuration before creating and/or switching window."
                 ((eq shell-toggle-launch-shell
                      'shell-toggle-eshell))
                 (t (message "Shell type not recognized")))
-	  (insert cd-command)
-	  (if shell-toggle-automatic-cd
-	      (cond ((eq shell-toggle-launch-shell 'shell)
-		     (comint-send-input))
-		    ((eq shell-toggle-launch-shell
-			 'shell-toggle-ansi-term)
-		     (term-send-input))
+	      (term-send-raw-string (concat cd-command "&& clear"))
+	      (if shell-toggle-automatic-cd
+	          (cond ((eq shell-toggle-launch-shell 'shell)
+		             (comint-send-input))
+		            ((eq shell-toggle-launch-shell
+			             'shell-toggle-ansi-term)
+		             (term-send-input))
                     ((eq shell-toggle-launch-shell
                          'shell-toggle-eshell)
                      (eshell-send-input))
-		    (t (message "Shell type not recognized")))
-	    )
-	  ))
-    (run-hooks 'shell-toggle-goto-shell-hook)
-    ))
+		            (t (message "Shell type not recognized")))
+	        )
+	      ))
+    (run-hooks 'shell-toggle-goto-shell-hook)))
 
 (defun shell-toggle-buffer-switch-to-other-window ()
   "Switch to other window.
@@ -344,7 +342,7 @@ create a new window and switch to it.
     (if (eq this-window (selected-window))
 	(progn
 	  (split-window-below 30)
-          (other-window 1)))))
+      (other-window 1)))))
 
 (provide 'shell-toggle)
 
