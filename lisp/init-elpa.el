@@ -37,6 +37,7 @@ re-downloaded in order to locate PACKAGE."
     (package-menu-execute 'no-query)
     (package-autoremove)))
 
+(require-package-load 'use-package)
 (provide 'init-elpa)
 
 ;;; init-elpa.el ends here

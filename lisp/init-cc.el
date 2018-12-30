@@ -3,6 +3,7 @@
 ;;; Author: Xu Zhao (i@xuzhao.net)
 
 ;;; Code:
+(require 'init-elpa)
 
 (setq-default c-default-style "linux")
 (setq-default c-basic-offset 4)
@@ -27,7 +28,8 @@
 ;; ccls configuration
 (require-package-load 'ccls)
 (setq-default ccls-executable "ccls")
+(use-package ccls
+  :hook ((c-mode c++-mode objc-mode) . (lambda () (require 'ccls) (lsp))))
 
 (provide 'init-cc)
-
 ;;; init-cc.el ends here
