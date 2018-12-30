@@ -11,10 +11,11 @@
 
 (use-package lsp-ui
   :ensure t
+  :after lsp-mode
   :commands lsp-ui-mode
   :config
-  (lsp-ui-sideline-enable -1)
-  (lsp-ui-imenu-enable -1))
+  (setq lsp-ui-sideline-enable nil
+        lsp-ui-imenu-enable nil))
 
 (use-package company-lsp
   :ensure t

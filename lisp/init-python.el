@@ -8,7 +8,7 @@
 (setq-default doom-modeline-python-executable "python3")
 
 (use-package lsp-mode
-  :hook (python-mode) . (lsp))
+  :hook (python-mode) . (lambda () (lsp) ))
 
 (provide 'init-python)
 
