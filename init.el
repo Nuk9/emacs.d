@@ -38,11 +38,12 @@
 ;; Programming language supports
 (require 'init-prog)
 (require 'init-lsp)
-(require 'init-shell)
 (require 'init-elisp)
+(require 'init-cc)
+(require 'init-python)
+(require 'init-shell)
 (require 'init-perl)
 (require 'init-rust)
-(require 'init-python)
 (require 'init-haskell)
 
 ;; Project related settings

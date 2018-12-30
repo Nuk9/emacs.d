@@ -3,8 +3,6 @@
 ;;; Author: Xu Zhao (i@xuzhao.net)
 
 ;;; Code:
-(require 'init-elpa)
-
 (setq-default c-default-style "linux")
 (setq-default c-basic-offset 4)
 
@@ -19,17 +17,14 @@
 
 (defun xu-c++-mode-hook ()
   "C++ mode hooks."
-  (c-set-style "cpp-style")
-  (auto-fill-mode)
-  (c-toggle-auto-hungry-state 1))
-
+  (c-set-style "cpp-style"))
 (add-hook 'c++-mode-hook 'xu-c++-mode-hook)
 
 ;; ccls configuration
-(require-package-load 'ccls)
-(setq-default ccls-executable "ccls")
 (use-package ccls
-  :hook ((c-mode c++-mode objc-mode) . (lambda () (require 'ccls) (lsp))))
+  :ensure t
+  :hook ((c-mode c++-mode objc-mode) .
+         (lambda () (require 'ccls) (lsp) (lsp-ui-sideline-mode -1))))
 
 (provide 'init-cc)
 ;;; init-cc.el ends here

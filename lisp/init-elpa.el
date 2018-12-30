@@ -31,11 +31,12 @@ re-downloaded in order to locate PACKAGE."
 (defun endless/upgrade ()
   "Upgrade all packages, no questions asked."
   (interactive)
-  (save-window-excursion
-    (list-packages)
-    (package-menu-mark-upgrades)
-    (package-menu-execute 'no-query)
-    (package-autoremove)))
+  (let ((package-menu-async nil))
+    (save-window-excursion
+      (list-packages)
+      (package-menu-mark-upgrades)
+      (package-menu-execute 'no-query)
+      (package-autoremove))))
 
 (require-package-load 'use-package)
 (provide 'init-elpa)

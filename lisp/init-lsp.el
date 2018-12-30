@@ -3,10 +3,22 @@
 ;;; Author: Xu Zhao (i@xuzhao.net)
 ;;; Code:
 
-(require-package-load 'lsp-ui)
-(add-hook 'lsp-mode-hook 'lsp-ui-mode)
-(define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
-(define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
+(use-package lsp-mode
+  :ensure t
+  :commands lsp
+  :config
+  (require 'lsp-clients))
+
+(use-package lsp-ui
+  :ensure t
+  :commands lsp-ui-mode
+  :config
+  (lsp-ui-sideline-enable -1)
+  (lsp-ui-imenu-enable -1))
+
+(use-package company-lsp
+  :ensure t
+  :commands company-lsp)
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here
