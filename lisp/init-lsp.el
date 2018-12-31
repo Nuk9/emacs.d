@@ -7,7 +7,8 @@
   :ensure t
   :commands lsp
   :config
-  (require 'lsp-clients))
+  (require 'lsp-clients)
+  (setq lsp-inhibit-message t))
 
 (use-package lsp-ui
   :ensure t
@@ -20,6 +21,16 @@
 (use-package company-lsp
   :ensure t
   :commands company-lsp)
+
+;; C/C++
+(use-package ccls
+  :ensure t
+  :hook ((c-mode c++-mode objc-mode) .
+         (lambda () (require 'ccls) (lsp))))
+
+;; Python
+(use-package lsp-mode
+  :hook (python-mode) . (lambda () (lsp) ))
 
 (provide 'init-lsp)
 ;;; init-lsp.el ends here

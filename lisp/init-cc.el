@@ -20,11 +20,5 @@
   (c-set-style "cpp-style"))
 (add-hook 'c++-mode-hook 'xu-c++-mode-hook)
 
-;; ccls configuration
-(use-package ccls
-  :ensure t
-  :hook ((c-mode c++-mode objc-mode) .
-         (lambda () (require 'ccls) (lsp))))
-
 (provide 'init-cc)
 ;;; init-cc.el ends here

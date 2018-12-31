@@ -2,6 +2,7 @@
 ;;; Commentary:
 ;;; Author: Xu Zhao (i@xuzhao.net)
 
+
 ;;; Code:
 
 
@@ -31,13 +32,12 @@
 (require 'init-dired)
 (require 'init-org)
 (require 'init-yas)
-(require 'init-company)
 (require 'init-flycheck)
 (require 'init-magit)
 
 ;; Programming language supports
-(require 'init-prog)
 (require 'init-lsp)
+(require 'init-company)
 (require 'init-elisp)
 (require 'init-cc)
 (require 'init-python)

@@ -9,7 +9,8 @@
 (defvar emacs-private-dir
   (concat (file-truename user-emacs-directory) "private/")
   "Where your private customizations are placed.  Must end in a slash.")
-
+(setq custom-file (concat emacs-private-dir "custom.el"))
+(load custom-file 'noerror)
 ;;
 ;; Emacs core configurations
 
