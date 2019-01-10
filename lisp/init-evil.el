@@ -16,10 +16,10 @@
   "e" 'find-file
   "b" 'switch-to-buffer
   "k" 'kill-this-buffer
-  "p" 'find-file-in-project
+  "p" 'counsel-projectile-find-file
   "c" 'evil-ex-nohighlight
   "s" 'projectile-switch-project
-  "P" 'projectile-find-file-in-known-projects
+  "P" 'counsel-projectile-switch-project
   "x" 'execute-extended-command
   "i" 'package-install
   "3" '(lambda () (interactive)(split-window-right) (other-window 1) (dired-jump) (revert-buffer))
@@ -33,6 +33,7 @@
 
 ;; evil custom commands
 (evil-ex-define-cmd "sw[iper]" 'swiper)
+(evil-ex-define-cmd "rg" 'counsel-projectile-rg)
 
 (define-key evil-normal-state-map "gd" 'xref-find-definitions-other-window)
 (define-key evil-normal-state-map "gb" 'pop-global-mark)
