@@ -1,20 +1,25 @@
-;;; package -- summary
+;;; package -- summary -*- lexical-binding: t; -*-
 ;;; Commentary:
 ;;; Author: Xu Zhao (i@xuzhao.net)
 
 ;;; Code:
 
-(let ((gls (executable-find "gls")))
-  (when gls (setq-default insert-directory-program gls)))
-(setq-default dired-omit-verbose nil)
-(setq-default dired-omit-files-p t)
-(setq-default diredp-hide-details-initially-flag nil)
-(setq-default diredp-hide-details-propagate-flag nil)
-(setq-default dired-isearch-filenames t)     ; Dired mode search filename only
-(setq-default dired-dwim-target t)
-(setq-default dired-recursive-copies 'always)
-(setq-default dired-recursive-deletes 'always)
-(put 'dired-find-alternate-file 'disabled nil)
+(use-package dired-k
+  :ensure t
+  :config
+  (setq dired-k-style 'git)
+  (add-hook 'dired-initial-position-hook 'dired-k)
+  (add-hook 'dired-after-readin-hook #'dired-k-no-revert))
+
+(setq-default dired-omit-verbose nil
+              dired-omit-files-p t
+              diredp-hide-details-initially-flag nil
+              diredp-hide-details-propagate-flag nil
+              dired-isearch-filenames t
+              global-auto-revert-non-file-buffers t
+              dired-dwim-target t
+              dired-recursive-copies 'always
+              dired-recursive-deletes 'always)
 
 (defun dired-new-file (file)
   "Create a new FILE in dired mode."
@@ -78,8 +83,6 @@
    ((string-equal system-type "darwin") (shell-command "open ."))
    ((string-equal system-type "gnu/linux")
     (let ((process-connection-type nil)) (start-process "" nil "open" ".")))))
-
-(global-set-key (kbd "C-x C-j") 'dired-jump)
 
 (provide 'init-dired)
 ;;; init-dired.el ends here
