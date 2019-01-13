@@ -4,8 +4,10 @@
 
 ;;; Code:
 
-(setq-default python-shell-interpreter "python3")
-(setq-default doom-modeline-python-executable "python3")
+(require 'python)
+(require 'doom-modeline)
+(setq python-shell-interpreter "python3")
+(setq doom-modeline-python-executable "python3")
 
 (provide 'init-python)
 
