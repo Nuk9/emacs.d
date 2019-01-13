@@ -18,8 +18,7 @@
   "k" 'kill-this-buffer
   "p" 'counsel-projectile-find-file
   "c" 'evil-ex-nohighlight
-  "s" 'projectile-switch-project
-  "P" 'counsel-projectile-switch-project
+  "s" 'counsel-projectile-switch-project
   "x" 'execute-extended-command
   "i" 'package-install
   "3" '(lambda () (interactive)(split-window-right) (other-window 1) (dired-jump) (revert-buffer))

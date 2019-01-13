@@ -39,6 +39,7 @@
 (require 'init-lsp)
 (require 'init-company)
 (require 'init-elisp)
+(require 'init-scheme)
 (require 'init-cc)
 (require 'init-python)
 (require 'init-shell)
