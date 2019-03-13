@@ -6,7 +6,8 @@
 
 (add-hook 'org-mode-hook 'org-indent-mode)
 
-(require-package-load 'evil-org)
+(use-package evil-org
+  :ensure t)
 
 (provide 'init-org)
 ;;; init-org.el ends here

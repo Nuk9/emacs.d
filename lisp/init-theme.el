@@ -4,14 +4,19 @@
 
 ;;; Code:
 
-(require-package 'all-the-icons)
-(require-package 'doom-modeline)
-(require-package 'doom-themes)
+(use-package all-the-icons
+  :ensure t)
+(use-package color-theme-solarized
+  :ensure t)
+(use-package doom-modeline
+  :ensure t)
+(use-package doom-themes
+  :ensure t)
 
 (defun xzhao/set-frame-theme (frame)
   "Set FRAME theme."
-  (load-theme 'doom-one t)
-  (doom-modeline-init))
+  (load-theme 'doom-solarized-light t)
+  (doom-modeline-mode t))
 
 (defun xzhao/set-frame-font (frame)
   "Set font of newly created FRAME."

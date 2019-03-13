@@ -36,6 +36,7 @@
 (require 'init-magit)
 
 ;; Programming language supports
+(require 'init-txt)
 (require 'init-lsp)
 (require 'init-company)
 (require 'init-elisp)
