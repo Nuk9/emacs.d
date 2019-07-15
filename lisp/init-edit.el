@@ -32,7 +32,7 @@
 
 (blink-cursor-mode 0)
 (delete-selection-mode t)
-(global-display-line-numbers-mode t)
+(global-linum-mode t)
 (global-visual-line-mode t)
 (defalias 'yes-or-no-p 'y-or-n-p)
 

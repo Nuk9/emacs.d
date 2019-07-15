@@ -4,9 +4,7 @@
 
 ;;; Code:
 
-(require 'company-dabbrev)
 (add-hook 'text-mode-hook 'turn-on-visual-line-mode)
-(setq company-dabbrev-downcase nil)
 
 (provide 'init-txt)
 
