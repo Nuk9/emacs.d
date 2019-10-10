@@ -16,8 +16,7 @@
 (cond (IS-MAC
          (setq-default mac-option-modifier 'meta
 		       mac-command-modifier 'control
-		       mac-control-modifier 'super
-		       insert-directory-program (executable-find "gls")))
+		       mac-control-modifier 'super))
       (IS-LINUX
        ;; native tooltips are ugly!
        (setq-default x-gtk-use-system-tooltips nil)))
