@@ -23,10 +23,10 @@
   :commands company-lsp)
 
 ;; C/C++
-(use-package ccls
-  :ensure t
-  :hook ((c-mode c++-mode objc-mode) .
-         (lambda () (require 'ccls) (lsp))))
+;; (use-package ccls
+;;   :ensure t
+;;   :hook ((c-mode c++-mode objc-mode) .
+;;          (lambda () (require 'ccls) (lsp))))
 
 ;; Python
 (use-package lsp-mode

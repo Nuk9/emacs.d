@@ -24,12 +24,12 @@
     (if (display-graphic-p)
 	(set-frame-font "Consolas 13" nil frame))
   (if (display-graphic-p)
-      (set-frame-font "Monospace 11" nil frame)))
+      (set-frame-font "Cascadia Code-11" nil frame)))
  (dolist (charset '(kana han symbol cjk-misc bopomofo))
   (if (display-graphic-p)
       (set-fontset-font (frame-parameter nil 'font)
                         charset
-                        (font-spec :family "Noto Sans CJK SC Regular" :size 13)))))
+                        (font-spec :family "WenQuanYi Micro Hei" :size 14)))))
 
 (xzhao/set-frame-font t)
 (xzhao/set-frame-theme t)
