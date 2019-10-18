@@ -15,7 +15,7 @@
 
 (defun xzhao/set-frame-theme (frame)
   "Set FRAME theme."
-  (load-theme 'doom-solarized-light t)
+  (load-theme 'doom-solarized-dark t)
   (doom-modeline-mode t))
 
 (defun xzhao/set-frame-font (frame)
