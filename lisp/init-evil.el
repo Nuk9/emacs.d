@@ -9,6 +9,11 @@
 (require 'evil-search)
 (require 'evil-leader)
 (require 'ivy)
+(use-package vi-tilde-fringe
+  :ensure t)
+(use-package ace-jump-mode
+  :ensure t)
+(global-vi-tilde-fringe-mode t)
 
 ;; evil-leader shortcuts
 (evil-leader/set-leader "<SPC>")
@@ -36,6 +41,7 @@
 
 (define-key evil-normal-state-map "gd" 'xref-find-definitions-other-window)
 (define-key evil-normal-state-map "gb" 'pop-global-mark)
+(define-key evil-normal-state-map "gj" 'evil-ace-jump-word-mode)
 
 (setq-default evil-leader/no-prefix-mode-rx
 	      '("magit-*-mode"))
