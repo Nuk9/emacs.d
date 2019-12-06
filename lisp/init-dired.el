@@ -48,6 +48,7 @@
      (define-key dired-mode-map (kbd "<backspace>")
        (lookup-key dired-mode-map (kbd "^")))
      (setq-default dired-omit-files-p t)
+     (add-hook 'dired-mode-hook 'auto-revert-mode)
      ))
 
 ;; dired-open-in-external-app functions
