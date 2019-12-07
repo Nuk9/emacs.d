@@ -41,7 +41,7 @@
 
 (define-key evil-normal-state-map "gd" 'xref-find-definitions-other-window)
 (define-key evil-normal-state-map "gb" 'pop-global-mark)
-(define-key evil-normal-state-map "gj" 'evil-ace-jump-word-mode)
+(define-key evil-normal-state-map "J" 'evil-ace-jump-word-mode)
 
 (setq-default evil-leader/no-prefix-mode-rx
 	      '("magit-*-mode"))
