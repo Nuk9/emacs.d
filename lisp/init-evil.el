@@ -44,11 +44,13 @@
 (define-key evil-normal-state-map "J" 'evil-ace-jump-word-mode)
 
 (setq-default evil-leader/no-prefix-mode-rx
-	      '("magit-*-mode"))
+              '("magit-*-mode"))
 (global-evil-leader-mode)
 (evil-mode 1)
 ;; Use evil search instead of isearch
 (evil-select-search-module 'evil-search-module 'evil-search)
+;; Clear search highlights when entering the insert mode
+(add-hook 'evil-insert-state-entry-hook 'evil-ex-nohighlight)
 
 ;; key-chords
 (key-chord-define evil-insert-state-map "jk" 'evil-normal-state)
