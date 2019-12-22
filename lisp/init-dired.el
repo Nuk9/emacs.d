@@ -48,9 +48,9 @@
      (define-key dired-mode-map (kbd "<backspace>")
        (lookup-key dired-mode-map (kbd "^")))
      (setq-default dired-omit-files-p t)
-     (add-hook 'dired-mode-hook 'auto-revert-mode)
      ))
 
+(add-hook 'dired-mode-hook 'auto-revert-mode)
 ;; dired-open-in-external-app functions
 (defun ergoemacs-open-in-external-app ()
   "Open the current file or dired marked files in external app."
