@@ -77,13 +77,14 @@ Then feed the PRELUDE command into the buffer."
 ;;; Internal functions and declarations
 (defun repl-toggle-show-toggle-buffer()
   "Show the *Toggle* buffer. Create if needed."
-  (let ((toggle-buffer (repl-toggle-create-toggle-buffer)))
+  (let ((toggle-buffer (repl-toggle-create-toggle-buffer 'ansi-term)))
     (repl-toggle-split-vertically-and-goto-buffer toggle-buffer)))
 
-(defun repl-toggle-create-toggle-buffer ()
-  "Create a *Toggle* buffer if not exist.
+(defun repl-toggle-create-toggle-buffer (func)
+  "Create a *Toggle* buffer if not exist using FUNC.
 Then return either the newly-created buffer, or an existing *Toggle* buffer."
-  (setq repl-toggle-repl-buffer (get-buffer-create "*Toggle*"))
+  (setq repl-toggle-repl-buffer (funcall func "/bin/zsh" "Toggle"))
+  (previous-buffer)
   repl-toggle-repl-buffer)
 
 (defun repl-toggle-buffer-return-from-repl ()
@@ -101,9 +102,6 @@ Then return either the newly-created buffer, or an existing *Toggle* buffer."
   (other-window 1)
   (switch-to-buffer buffer)
   (setq-default comint-process-echoes t)
-  (if (string= (with-current-buffer (current-buffer) major-mode) "shell-mode")
-      ()
-    (shell buffer))
   (goto-char (point-max)))
 
 (provide 'repl-toggle)
