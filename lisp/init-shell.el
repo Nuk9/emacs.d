@@ -4,9 +4,9 @@
 ;;; Author: Xu Zhao (i@xuzhao.net)
 ;;; Code:
 
-(require 'shell-toggle)
+(require 'repl-toggle)
 
-(global-set-key (kbd "<f4>") 'shell-toggle)
+(global-set-key (kbd "<f4>") 'repl-toggle)
 
 (provide 'init-shell)
 ;;; init-shell.el ends here

@@ -3,7 +3,7 @@
 ;;; Copyright (C) 1997, 1998 Mikael Sjödin (mic@docs.uu.se)
 ;;; Copyright (C) 2002, 2004 Matthieu Moy
 ;;; Copyright (C) 2015       Akinori MUSHA
-;;; Copyright (C) 2018       Xu Zhao
+;;; Copyright (C) 2018, 2019 Xu Zhao
 ;;;
 ;;; Author: Mikael Sjödin <mic@docs.uu.se>
 ;;;         Matthieu Moy
@@ -129,8 +129,7 @@ Currently supported are 'shell and 'shell-toggle-ansi-term, and
                  function))
 
 (defcustom shell-toggle-full-screen-window-only nil
-  "If non-nil, `shell-toggle' will switch between full screen
-shell window, and back, with no intermediate step."
+  "If non-nil, `shell-toggle' will switch between full screen shell window, and back, with no intermediate step."
   :group 'shell-toggle
   :type 'boolean)
 
@@ -195,11 +194,24 @@ Options: `shell-toggle-goto-eob'"
   ;; If in shell-buffer and called twice in a row, delete other windows
   ;; If in shell-buffer and not called twice in a row, return to state before
   ;;  going to the shell-buffer
-  (if (eq (current-buffer) shell-toggle-shell-buffer)
-      (shell-toggle-buffer-return-from-shell)
+  ;; If shell-toggle-shell-buffer is bounded and is a live buffer
+  (if (and (boundp 'shell-toggle-shell-buffer) (buffer-live-p 'shell-toggle-shell-buffer))
+      ;; if shell buffer is bounded and is current buffer, return from shell
+      (if (eq (current-buffer) shell-toggle-shell-buffer)
+          (shell-toggle-buffer-return-from-shell)
+        ;; if shell buffer is bounded and is not current buffer, switch to it
+        (switch-to-buffer shell-toggle-shell-buffer))
+    ;; if shell buffer is not bounded or not live, open a new shell
     (progn
       (shell-toggle-buffer-goto-shell make-cd)
-      (if shell-toggle-full-screen-window-only (delete-other-windows)))))
+      (if shell-toggle-full-screen-window-only (delete-other-windows))))
+  ;; (if (eq (current-buffer) shell-toggle-shell-buffer)
+  ;;     (shell-toggle-buffer-return-from-shell)
+  ;;   (progn
+  ;;     ;; if shell-buffer exists, remove it first
+  ;;     (shell-toggle-buffer-goto-shell make-cd)
+  ;;     (if shell-toggle-full-screen-window-only (delete-other-windows))))
+  )
 
 ;;; ======================================================================
 ;;; Internal functions and declarations
@@ -209,6 +221,7 @@ Options: `shell-toggle-goto-eob'"
 
 (defvar shell-toggle-pre-shell-selected-frame nil
   "Contains the frame selected before the shell buffer was selected.")
+
 
 (defun shell-toggle-buffer-return-from-shell ()
   "Restore the window configuration used before switching the shell buffer.

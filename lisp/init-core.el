@@ -35,7 +35,8 @@
  auto-save-default nil
  create-lockfiles nil
  history-length 500
- make-backup-files nil)
+ make-backup-files nil
+ confirm-kill-processes nil)
 (menu-bar-mode -1)
 (tool-bar-mode -1)
 (scroll-bar-mode -1)
