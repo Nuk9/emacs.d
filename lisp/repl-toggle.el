@@ -3,7 +3,7 @@
 ;;; Copyright (C) 2020, Xu Zhao (i@xuzhao.net)
 ;;;
 ;;; Author: Xu Zhao (i@xuzhao.net)
-;;; Version: 0.0.1
+;;; Version: 0.1.0
 ;;;
 ;;; This file is NOT part of GNU Emacs.
 ;;; You may however redistribute it and/or modify it under the terms of the GNU
@@ -34,8 +34,8 @@
 
 ;;; Changelog
 ;;
-;; Version 0.0.1 (Dec. 21, 2019)
-;; - Added the possibility to use different REPLs
+;; Version 0.1.0 (Dec. 21, 2019)
+;; - Initial commit. Only default Emacs shell (`shell`) is supported.
 
 ;;; Code:
 (defgroup repl-toggle nil
@@ -69,7 +69,7 @@ Then feed the PRELUDE command into the buffer."
    ;; *Toggle* exists but not visible: create a window and switch to it.
    ((and (not (eq repl-toggle-repl-buffer nil)) (buffer-live-p repl-toggle-repl-buffer))
     (repl-toggle-split-vertically-and-goto-buffer repl-toggle-repl-buffer))
-   ;; Default: Either *Toggle* does not exist or not visible: create a window and switch to it
+   ;; Default: Either *Toggle* is killed or not visible: create a window and switch to it
    ;; Note that this may not be successful, because the current window may be too small.
    (t (repl-toggle-show-toggle-buffer))))
 
@@ -78,8 +78,7 @@ Then feed the PRELUDE command into the buffer."
 (defun repl-toggle-show-toggle-buffer()
   "Show the *Toggle* buffer. Create if needed."
   (let ((toggle-buffer (repl-toggle-create-toggle-buffer)))
-      (repl-toggle-split-vertically-and-goto-buffer toggle-buffer)
-      (shell toggle-buffer)))
+    (repl-toggle-split-vertically-and-goto-buffer toggle-buffer)))
 
 (defun repl-toggle-create-toggle-buffer ()
   "Create a *Toggle* buffer if not exist.
@@ -100,7 +99,12 @@ Then return either the newly-created buffer, or an existing *Toggle* buffer."
   "Split window vertically and goto the repl BUFFER."
   (split-window-below 30)
   (other-window 1)
-  (switch-to-buffer buffer))
+  (switch-to-buffer buffer)
+  (setq-default comint-process-echoes t)
+  (if (string= (with-current-buffer (current-buffer) major-mode) "shell-mode")
+      ()
+    (shell buffer))
+  (goto-char (point-max)))
 
 (provide 'repl-toggle)
 ;;; repl-toggle.el ends here
