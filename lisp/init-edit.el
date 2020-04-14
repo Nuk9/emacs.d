@@ -33,8 +33,10 @@
 (blink-cursor-mode 0)
 (delete-selection-mode t)
 (global-linum-mode t)
+(setq-default linum-format "%3d ")
 (global-visual-line-mode t)
 (defalias 'yes-or-no-p 'y-or-n-p)
+
 
 (defun rename-current-file-and-buffer ()
   "Rename the current buffer and file it is visiting."

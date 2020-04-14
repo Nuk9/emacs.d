@@ -5,7 +5,7 @@
 
 (use-package lsp-mode
   :ensure t
-  :commands lsp
+  :commands lsp-mode
   :config
   (require 'lsp-clients)
   (setq lsp-inhibit-message t))

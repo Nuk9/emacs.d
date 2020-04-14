@@ -13,12 +13,30 @@
 (use-package doom-themes
   :ensure t)
 
-(defun xzhao/set-frame-theme (frame)
-  "Set FRAME theme."
-  (load-theme 'doom-solarized-dark t)
+;; (defun xzhao/set-frame-theme (frame)
+;;   "Set FRAME theme."
+;;   (if (display-graphic-p)
+;;       (progn
+;;         (load-theme 'doom-solarized-dark t)
+;;         (doom-modeline-mode t))
+;;     (progn
+;;       (load-theme 'doom-ephemeral t)
+;;       (doom-modeline-mode t))))
+(defvar xz-theme-window 'doom-solarized-dark)
+(defvar xz-theme-term 'doom-ephemeral)
+(defvar xz-theme-window-loaded nil)
+(defvar xz-theme-term-loaded nil)
+(defun xz/load-theme (theme)
+  "Load the specified THEME."
+  (load-theme theme t)
   (doom-modeline-mode t))
 
-(defun xzhao/set-frame-font (frame)
+(defun xz/enable-theme (theme)
+  "Enable the specified THEME."
+  (enable-theme theme)
+  (doom-modeline-mode t))
+
+(defun xz/set-frame-font (frame)
   "Set font of newly created FRAME."
   (if (eq system-type 'darwin)
     (if (display-graphic-p)
@@ -31,14 +49,39 @@
                         charset
                         (font-spec :family "WenQuanYi Micro Hei" :size 14)))))
 
-(xzhao/set-frame-font t)
-(xzhao/set-frame-theme t)
-;; set font and theme in emacsclient frame
+(defun xz/set-frame-theme (frame)
+  "Set theme in the given FRAME."
+  (if (daemonp)
+      (add-hook 'after-make-frame-functions(lambda (frame)
+                                             (select-frame frame)
+                                             (if (window-system frame)
+                                                 (unless xz-theme-window-loaded
+                                                   (if xz-theme-term-loaded
+                                                       (xz/enable-theme xz-theme-term)
+                                                     (xz/load-theme xz-theme-window))
+                                                   (setq xz-theme-window-loaded t))
+                                               (unless xz-theme-term-loaded
+                                                 (if xz-theme-window-loaded
+                                                     (xz/enable-theme xz-theme-window)
+                                                   (xz/load-theme xz-theme-term))
+                                                 (setq xz-theme-term-loaded t)))))
+  (progn
+    (if (display-graphic-p)
+        (progn
+          (load-theme xz-theme-window t)
+          (doom-modeline-mode t)
+          (xz/set-frame-font frame))
+      (progn
+        (load-theme xz-theme-term t)
+        (doom-modeline-mode t))))))
+
+(xz/set-frame-theme t)
+
+;; set font in emacsclient frame
 (defadvice server-create-window-system-frame
     (after set-window-system-frame-colours ())
   "Setup frame font and theme in Emacs Server."
-  (xzhao/set-frame-font t)
-  (xzhao/set-frame-theme t))
+  (xz/set-frame-font t))
 (ad-activate 'server-create-window-system-frame)
 
 ;; Highlight TODO, NOTE, and FIXME tags
