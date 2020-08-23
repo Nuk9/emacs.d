@@ -47,7 +47,7 @@
   (if (display-graphic-p)
       (set-fontset-font (frame-parameter nil 'font)
                         charset
-                        (font-spec :family "WenQuanYi Micro Hei" :size 14)))))
+                        (font-spec :family "WenQuanYi Micro Hei" :size 27)))))
 
 (defun xz/set-frame-theme (frame)
   "Set theme in the given FRAME."

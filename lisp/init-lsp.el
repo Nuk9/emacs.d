@@ -7,7 +7,6 @@
   :ensure t
   :commands lsp-mode
   :config
-  (require 'lsp-clients)
   (setq lsp-inhibit-message t))
 
 (use-package lsp-ui
