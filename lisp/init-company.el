@@ -3,6 +3,8 @@
 ;;; Author: Xu Zhao (i@xuzhao.net)
 
 ;;; Code:
+
+
 (defun company-yasnippet-or-completion ()
   "Solve company yasnippet conflicts."
   (interactive)
@@ -35,14 +37,7 @@
         company-idle-delay 0.2
         company-minimum-prefix-length 2))
 
-(global-company-mode +1)
 (global-set-key (kbd "TAB") #'company-indent-or-complete-common)
-
-;; set lsp backend
-(use-package company-lsp
-  :after company
-  :config
-  (push 'company-lsp company-backends))
 
 (provide 'init-company)
 
