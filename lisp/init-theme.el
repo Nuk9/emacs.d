@@ -6,7 +6,7 @@
 
 (use-package all-the-icons
   :ensure t)
-(use-package color-theme-solarized
+(use-package color-theme-sanityinc-solarized
   :ensure t)
 (use-package doom-modeline
   :ensure t)

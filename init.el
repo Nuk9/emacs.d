@@ -7,12 +7,10 @@
 
 ;; (package-initialize)
 
+(defconst *is-a-mac* (eq system-type 'darwin))
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
-(defconst *is-a-mac* (eq system-type 'darwin))
-
 (require 'init-core)
-
 (require 'init-elpa)
 (require 'init-packages)
 (require 'init-utils)

@@ -5,7 +5,7 @@
 ;;; Code:
 
 ;; define variables
-(add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
+
 (defvar emacs-private-dir
   (concat (file-truename user-emacs-directory) "private/")
   "Where your private customizations are placed.  Must end in a slash.")
@@ -13,7 +13,6 @@
 (load custom-file 'noerror)
 ;;
 ;; Emacs core configurations
-
 
 ;; UTF-8 as the default coding system
 (when (fboundp 'set-charset-priority)

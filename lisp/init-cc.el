@@ -20,5 +20,8 @@
   (c-set-style "cpp-style"))
 (add-hook 'c++-mode-hook 'xu-c++-mode-hook)
 
+
+
+
 (provide 'init-cc)
 ;;; init-cc.el ends here
