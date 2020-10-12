@@ -28,6 +28,7 @@
  column-number-mode t
  ;; disable backup
  backup-inhibited t
+ tab-width 4
  auto-save-default nil)
 
 (blink-cursor-mode 0)
