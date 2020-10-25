@@ -8,25 +8,21 @@
   :ensure t)
 (use-package color-theme-sanityinc-solarized
   :ensure t)
+(use-package doom-themes
+  :ensure t)
 (use-package doom-modeline
   :ensure t
   :init (doom-modeline-mode 1))
-(use-package doom-themes
-  :ensure t)
+;; Highlight TODO, NOTE, and FIXME tags
+(use-package hl-todo
+  :ensure t
+  :init (global-hl-todo-mode))
 
-;; (defun xzhao/set-frame-theme (frame)
-;;   "Set FRAME theme."
-;;   (if (display-graphic-p)
-;;       (progn
-;;         (load-theme 'doom-solarized-dark t)
-;;         (doom-modeline-mode t))
-;;     (progn
-;;       (load-theme 'doom-ephemeral t)
-;;       (doom-modeline-mode t))))
 (defvar xz-theme-window 'doom-solarized-dark)
 (defvar xz-theme-term 'doom-ephemeral)
 (defvar xz-theme-window-loaded nil)
 (defvar xz-theme-term-loaded nil)
+
 (defun xz/load-theme (theme)
   "Load the specified THEME."
   (load-theme theme t))
@@ -81,11 +77,7 @@
   (xz/set-frame-font t))
 (ad-activate 'server-create-window-system-frame)
 
-;; Highlight TODO, NOTE, and FIXME tags
-(require-package-load 'hl-todo)
-(global-hl-todo-mode)
-
-;; Test display of CJK fonts
+;; Test CJK fonts display
 ;; いろはにほへとちにぬるを
 ;; 花朵艳丽终将散落，谁人世间能长久好
 

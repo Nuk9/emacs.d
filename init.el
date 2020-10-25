@@ -12,7 +12,6 @@
 
 (require 'init-core)
 (require 'init-elpa)
-(require 'init-packages)
 (require 'init-utils)
 
 (require 'init-theme)

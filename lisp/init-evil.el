@@ -3,16 +3,23 @@
 ;;; Author: Xu Zhao (i@xuzhao.net)
 
 ;;; Code:
-(require 'init-elpa)
-(require-package-load 'evil)
+
+(use-package evil
+  :ensure t)
+(use-package evil-leader
+  :ensure t)
+(use-package key-chord
+  :ensure t)
+(use-package swiper
+  :ensure t)
+
 (require 'evil-states)
 (require 'evil-search)
 (require 'evil-leader)
-(require 'ivy)
 (use-package vi-tilde-fringe
-  :ensure t)
-(use-package ace-jump-mode
-  :ensure t)
+  :ensure t
+  :init (global-vi-tilde-fringe-mode t))
+
 (global-vi-tilde-fringe-mode t)
 
 ;; evil-leader shortcuts

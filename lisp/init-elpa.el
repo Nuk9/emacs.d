@@ -26,6 +26,7 @@ re-downloaded in order to locate PACKAGE."
   "Install given PACKAGE from MELPA and load it."
   (require-package package)
   (require package))
+
 (setq package-enable-at-startup nil)
 (package-initialize)
 

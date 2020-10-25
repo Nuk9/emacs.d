@@ -4,8 +4,10 @@
 
 ;;; Code:
 
-(require-package-load 'recentf)
-(recentf-mode 1)
+(use-package recentf
+  :ensure t
+  :init (recentf-mode 1))
+
 (setq-default recentf-max-menu-items 25)
 
 (provide 'init-recentf)

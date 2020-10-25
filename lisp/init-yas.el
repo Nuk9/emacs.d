@@ -3,11 +3,11 @@
 
 ;;; Code:
 
-(require 'init-elpa)
+(use-package yasnippet
+  :ensure t)
 
 ;;; set yas-snippet-dirs first to avoid loading redundant default snippets
 (setq-default yas-snippet-dirs '("~/.emacs.d/snippets"))
-(require-package-load 'yasnippet)
 
 (yas-global-mode 1)
 (add-to-list 'auto-mode-alist '("\\.snippet\\'" . snippet-mode))

@@ -3,12 +3,14 @@
 ;;; Author: Xu Zhao (i@xuzhao.net)
 
 ;;; Code:
+(use-package magit
+  :ensure t)
+(use-package evil-magit
+  :ensure t)
 
 (global-set-key (kbd "M-<f12>") 'magit-status)
 (setq-default magit-completing-read-function 'ivy-completing-read)
 
-(use-package evil-magit
-  :ensure t)
 
 (provide 'init-magit)
 

@@ -3,16 +3,24 @@
 ;;; Author: Xu Zhao (i@xuzhao.net)
 
 ;;; Code:
-(require-package-load 'rust-mode)
-(setq-default rust-indent-offset 4)
+(use-package rust-mode
+  :ensure t)
+(use-package racer
+  :ensure t)
+(use-package company-racer
+  :ensure t)
+(use-package flycheck-rust
+  :ensure t
+  :init (add-hook 'flycheck-mode-hook #'flycheck-rust-setup))
 
-(require-package-load 'exec-path-from-shell)
-(exec-path-from-shell-initialize)
+(use-package exec-path-from-shell
+  :ensure t
+  :init (exec-path-from-shell-initialize))
+
+(setq-default rust-indent-offset 4)
 (exec-path-from-shell-copy-env "RUST_SRC_PATH")
 
 ;; company
-(require-package-load 'racer)
-(require-package-load 'company-racer)
 (add-hook 'rust-mode-hook #'racer-mode)
 (add-hook 'racer-mode-hook #'eldoc-mode)
 (add-hook 'racer-mode-hook #'company-mode)
@@ -21,10 +29,6 @@
 	    (defvar company-backends)
 	    (set (make-local-variable 'company-backends)
 		 (add-to-list 'company-backends 'company-racer))))
-
-;; flycheck
-(require-package-load 'flycheck-rust)
-(add-hook 'flycheck-mode-hook #'flycheck-rust-setup)
 
 (provide 'init-rust)
 
