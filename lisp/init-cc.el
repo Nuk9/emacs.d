@@ -17,10 +17,9 @@
 
 (defun xu-c++-mode-hook ()
   "C++ mode hooks."
-  (c-set-style "cpp-style"))
+  (c-set-style "cpp-style")
+  (c-set-offset 'innamespace [0]))
 (add-hook 'c++-mode-hook 'xu-c++-mode-hook)
-
-
 
 
 (provide 'init-cc)

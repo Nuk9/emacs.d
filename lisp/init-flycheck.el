@@ -4,7 +4,8 @@
 
 ;;; Code:
 
-(require-package-load 'flycheck)
+(use-package flycheck
+	     :ensure t)
 (add-hook 'after-init-hook #'global-flycheck-mode)
 
 (provide 'init-flycheck)

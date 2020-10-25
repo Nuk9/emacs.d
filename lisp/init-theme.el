@@ -9,7 +9,8 @@
 (use-package color-theme-sanityinc-solarized
   :ensure t)
 (use-package doom-modeline
-  :ensure t)
+  :ensure t
+  :init (doom-modeline-mode 1))
 (use-package doom-themes
   :ensure t)
 
@@ -28,13 +29,11 @@
 (defvar xz-theme-term-loaded nil)
 (defun xz/load-theme (theme)
   "Load the specified THEME."
-  (load-theme theme t)
-  (doom-modeline-mode t))
+  (load-theme theme t))
 
 (defun xz/enable-theme (theme)
   "Enable the specified THEME."
-  (enable-theme theme)
-  (doom-modeline-mode t))
+  (enable-theme theme))
 
 (defun xz/set-frame-font (frame)
   "Set font of newly created FRAME."
@@ -69,11 +68,9 @@
     (if (display-graphic-p)
         (progn
           (load-theme xz-theme-window t)
-          (doom-modeline-mode t)
           (xz/set-frame-font frame))
       (progn
-        (load-theme xz-theme-term t)
-        (doom-modeline-mode t))))))
+        (load-theme xz-theme-term t))))))
 
 (xz/set-frame-theme t)
 
