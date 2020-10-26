@@ -6,7 +6,7 @@
 (setq-default c-default-style "linux")
 (setq-default c-basic-offset 4)
 
-; style I want to use in c++ mode
+;;; C++ style
 (c-add-style "cpp-style"
 	     '("stroustrup"
 	       (indent-tabs-mode . nil)        ; use spaces rather than tabs
@@ -15,11 +15,12 @@
 				   (brace-list-open . 0)
 				   (statement-case-open . +)))))
 
-(defun xu-c++-mode-hook ()
+(defun xz-c++-mode-hook ()
   "C++ mode hooks."
   (c-set-style "cpp-style")
+  ;; Don't indent after namespace block
   (c-set-offset 'innamespace [0]))
-(add-hook 'c++-mode-hook 'xu-c++-mode-hook)
+(add-hook 'c++-mode-hook 'xz-c++-mode-hook)
 
 
 (provide 'init-cc)
