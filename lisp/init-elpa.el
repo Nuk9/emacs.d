@@ -22,11 +22,6 @@ re-downloaded in order to locate PACKAGE."
         (package-refresh-contents)
         (require-package package min-version t)))))
 
-(defun require-package-load (package)
-  "Install given PACKAGE from MELPA and load it."
-  (require-package package)
-  (require package))
-
 (setq package-enable-at-startup nil)
 (package-initialize)
 
@@ -41,7 +36,9 @@ re-downloaded in order to locate PACKAGE."
       (package-menu-execute 'no-query)
       (package-autoremove))))
 
-(require-package-load 'use-package)
+(require-package 'use-package)
+(require 'use-package)
+
 (provide 'init-elpa)
 
 ;;; init-elpa.el ends here
