@@ -4,6 +4,10 @@
 
 ;;; Code:
 
+(use-package elpy
+  :ensure t
+  :init (elpy-enable))
+
 (require 'python)
 (require 'doom-modeline)
 (setq python-shell-interpreter "python3")
