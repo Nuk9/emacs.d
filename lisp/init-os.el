@@ -21,6 +21,10 @@
        ;; native tooltips are ugly!
        (setq-default x-gtk-use-system-tooltips nil)))
 
+(cond (IS-MAC
+       (global-set-key (kbd "<C-left>") 'beginning-of-line)
+       (global-set-key (kbd "<C-right>") 'end-of-line)))
+
 (provide 'init-os)
 
 ;;; init-os.el ends here
