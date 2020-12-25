@@ -5,9 +5,6 @@
 
 ;;; Code:
 
-;; (package-initialize)
-
-(defconst *is-a-mac* (eq system-type 'darwin))
 (add-to-list 'load-path (expand-file-name "lisp" user-emacs-directory))
 
 (require 'init-core)

@@ -4,7 +4,6 @@
 
 ;;; Code:
 
-
 (defun company-yasnippet-or-completion ()
   "Solve company yasnippet conflicts."
   (interactive)
@@ -35,7 +34,8 @@
   (setq company-backends (mapcar #'company-mode/backend-with-yas company-backends)
         company-tooltip-align-annotations t
         company-idle-delay 0.2
-        company-minimum-prefix-length 2))
+        company-minimum-prefix-length 2)
+  :ensure t)
 
 (global-set-key (kbd "TAB") #'company-indent-or-complete-common)
 
