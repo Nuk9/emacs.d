@@ -61,6 +61,7 @@
 (global-set-key (kbd "<f2>") 'nil)
 (global-set-key (kbd "C-:") 'comment-dwim)
 (global-set-key (kbd "M-:") 'nil)
+(global-set-key (kbd "C-?") 'undo-redo)
 (global-set-key (kbd "<f5>") '(lambda ()(interactive) (revert-buffer t t)))
 
 ;; (defadvice find-file (after find-file-sudo activate)

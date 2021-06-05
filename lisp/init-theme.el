@@ -8,6 +8,8 @@
   :ensure t)
 (use-package color-theme-sanityinc-solarized
   :ensure t)
+(use-package doom-modeline
+  :ensure t)
 (use-package doom-themes
   :ensure t)
 (use-package doom-modeline

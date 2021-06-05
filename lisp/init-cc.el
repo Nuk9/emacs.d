@@ -13,7 +13,8 @@
 	       (c-basic-offset . 4)            ; indent by four spaces
 	       (c-offsets-alist . ((inline-open . 0)  ; custom indentation rules
 				   (brace-list-open . 0)
-				   (statement-case-open . +)))))
+				   (statement-case-open . +)
+                   (innamespace . [0])))))
 
 (defun xz-c++-mode-hook ()
   "C++ mode hooks."

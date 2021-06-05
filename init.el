@@ -26,7 +26,7 @@
 
 ;; Programming language supports
 (require 'init-txt)
-(require 'init-lsp)
+;; (require 'init-lsp)
 (require 'init-company)
 (require 'init-elisp)
 (require 'init-scheme)

@@ -8,7 +8,7 @@
 
 
 (setq gnutls-algorithm-priority "NORMAL:-VERS-TLS1.3")
-(add-to-list 'package-archives `("melpa" . , "https://melpa.org/packages/"))
+;; (add-to-list 'package-archives `("melpa" . , "https://melpa.org/packages/"))
 
 (defun require-package (package &optional min-version no-refresh)
   "Install given PACKAGE, optionally requiring MIN-VERSION.
@@ -23,7 +23,6 @@ re-downloaded in order to locate PACKAGE."
         (require-package package min-version t)))))
 
 (setq package-enable-at-startup nil)
-(package-initialize)
 
 ;;; Endless upgrade
 (defun endless/upgrade ()
